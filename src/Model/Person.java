@@ -2,12 +2,19 @@ package Model;
 
 public class Person {
 	
-	String name;
-	String surname;
+	private String name;
+	private String surname;
+	private String gender;
+	private String address;
+	private int age;
 
-	public Person(String name, String surname) {
+	public Person(String name, String surname, int age, String gender, String address) {
 
 		this.name = name; 
 		this .surname = surname;
+		this.age = age;
+		this.gender = gender;
+		this.address = address;
 	}
+	
 }
