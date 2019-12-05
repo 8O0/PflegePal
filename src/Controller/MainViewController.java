@@ -34,19 +34,19 @@ public class MainViewController {
 	public ListView<Patient> patientView;
 	
 	
-	public void handlMedicationButton() {
+	public void handleMedicationButton() {
 		
 		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../View/MedicationView.fxml"));
-		Parent root1;
+		Parent root2;
 		try {
-			root1 = (Parent) fxmlLoader.load();
+			root2 = (Parent) fxmlLoader.load();
 			Stage stage = new Stage();
 			
 			stage.initModality(Modality.APPLICATION_MODAL);
-			stage.setScene(new Scene(root1));
+			stage.setScene(new Scene(root2));
 			stage.show();
 		} catch (IOException e) {
-			System.err.println("Error");
+			System.err.println("Error"+e.getMessage());
 		}
 		
 	}
