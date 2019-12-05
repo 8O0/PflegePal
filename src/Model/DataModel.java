@@ -11,6 +11,7 @@ public class DataModel {
 	
 	public DataModel() {
 		patients = FXCollections.observableArrayList();
+		medications = FXCollections.observableArrayList();
 		System.out.println("Model was initialized");
 	}
 	
@@ -20,8 +21,11 @@ public class DataModel {
 		
 	}
 	
-	public ObservableList<Patient> getList() {
+	public ObservableList<Patient> getPatients() {
 		return this.patients;
 	}
-	
+
+	public ObservableList<Medication> getMedications() {
+		return this.medications;
+	}
 }
