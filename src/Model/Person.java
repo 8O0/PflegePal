@@ -6,7 +6,7 @@ public class Person {
 	private String surname;
 	private String gender;
 	private String address;
-	private int age;
+	int age;
 
 	public Person(String name, String surname, int age, String gender, String address) {
 
@@ -16,5 +16,13 @@ public class Person {
 		this.gender = gender;
 		this.address = address;
 	}
+
+	@Override
+	public String toString() {
+		return "Person [name=" + name + ", surname=" + surname + ", gender=" + gender + ", address=" + address
+				+ ", age=" + age + "]";
+	}
+	
+	
 	
 }
