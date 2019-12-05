@@ -34,6 +34,24 @@ public class MainViewController {
 	public ListView<Patient> patientView;
 	
 	
+	public void handlMedicationButton() {
+		
+		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../View/MedicationView.fxml"));
+		Parent root1;
+		try {
+			root1 = (Parent) fxmlLoader.load();
+			Stage stage = new Stage();
+			
+			stage.initModality(Modality.APPLICATION_MODAL);
+			stage.setScene(new Scene(root1));
+			stage.show();
+		} catch (IOException e) {
+			System.err.println("Error");
+		}
+		
+	}
+	
+	
 	
 	public void handleWeekPlanButton() {
 		
@@ -44,7 +62,6 @@ public class MainViewController {
 			Stage stage = new Stage();
 			
 			stage.initModality(Modality.APPLICATION_MODAL);
-			stage.initStyle(StageStyle.UNDECORATED);
 			stage.setScene(new Scene(root1));
 			stage.show();
 		} catch (IOException e) {

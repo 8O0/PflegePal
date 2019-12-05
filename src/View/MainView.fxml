@@ -9,7 +9,7 @@
    <bottom>
       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0" style="-fx-background-color: grey;" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="medicationbutton" mnemonicParsing="false" text="Medication" />
+            <Button fx:id="medicationbutton" mnemonicParsing="false" onAction="#handlMedicationButton" text="Medication" />
             <Button fx:id="weeklyplanbutton" mnemonicParsing="false" onAction="#handleWeekPlanButton" text="Weekly Plan" />
             <Button fx:id="importbutton" mnemonicParsing="false" text="Import" />
             <Button mnemonicParsing="false" text="Export" />
