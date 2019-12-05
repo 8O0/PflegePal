@@ -1,8 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
 
 
-<BorderPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1" fx:controller="Controller.MainController">
-	<!-- TODO Add Nodes -->
+<BorderPane minHeight="600.0" minWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.MainViewController">
+   <bottom>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0" style="-fx-background-color: grey;" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="medicationbutton" mnemonicParsing="false" text="Medication" />
+            <Button fx:id="weeklyplanbutton" mnemonicParsing="false" text="Weekly Plan" />
+            <Button fx:id="importbutton" mnemonicParsing="false" text="Import" />
+            <Button mnemonicParsing="false" text="Export" />
+         </children>
+         <padding>
+            <Insets left="50.0" />
+         </padding>
+      </HBox>
+   </bottom>
+   <top>
+      <HBox prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: grey;" BorderPane.alignment="CENTER" />
+   </top>
 </BorderPane>
