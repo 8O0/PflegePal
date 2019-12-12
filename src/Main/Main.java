@@ -15,9 +15,9 @@ public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		try {
-			URL url = new File("/home/abel/IdeaProjects/btx8052-mini-project/src/View/MainView.fxml").toURI().toURL();
-			Parent root = FXMLLoader.load(url);
-			//BorderPane root = FXMLLoader.load(getClass().getClassLoader().getResource());
+			//URL url = new File("/home/abel/IdeaProjects/btx8052-mini-project/src/View/MainView.fxml").toURI().toURL();
+			//Parent root = FXMLLoader.load(url);
+			BorderPane root = FXMLLoader.load(getClass().getResource("../View/MainView.fxml"));
 			Scene scene = new Scene(root,800,600);
 			primaryStage.setTitle("Medication Plan");
 			primaryStage.setScene(scene);
