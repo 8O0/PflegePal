@@ -6,6 +6,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
+import javafx.stage.FileChooser;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -71,6 +72,8 @@ public class MainViewController {
 	}
 
 	public void handleImportButton(){
+
+		FileChooser fs = new FileChooser();
 
 	}
 

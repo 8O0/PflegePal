@@ -8,23 +8,34 @@ import javafx.scene.layout.BorderPane;
 import javafx.fxml.FXMLLoader;
 
 import java.io.File;
+import java.io.IOException;
 import java.net.URL;
 
 
 public class Main extends Application {
+
+	private Stage primaryStage;
+	private BorderPane rootLayout;
 	@Override
 	public void start(Stage primaryStage) {
+
+		this.primaryStage = primaryStage;
+		this.primaryStage.setTitle("CareGiver");
+
+		FXMLLoader loader = new FXMLLoader();
+		loader.setLocation(Main.class.getResource("../View/MainView.fxml"));
+
 		try {
-			URL url = new File("/home/abel/IdeaProjects/btx8052-mini-project/src/View/MainView.fxml").toURI().toURL();
-			Parent root = FXMLLoader.load(url);
-			//BorderPane root = FXMLLoader.load(getClass().getClassLoader().getResource());
-			Scene scene = new Scene(root,800,600);
-			primaryStage.setTitle("Medication Plan");
-			primaryStage.setScene(scene);
-			primaryStage.show();
-		} catch(Exception e) {
+			rootLayout = (BorderPane) loader.load();
+		} catch (IOException e){
 			e.printStackTrace();
 		}
+
+		Scene scene = new Scene(rootLayout);
+		primaryStage.setScene(scene);
+
+		primaryStage.show();
+
 	}
 	
 	public static void main(String[] args) {
