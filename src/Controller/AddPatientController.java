@@ -43,16 +43,14 @@ public class AddPatientController {
         stage.close();
     }
 
-    /*
-     * Called when the user clicks "Submit".
-     */
+
     @FXML
     private void handleSubmit() {
-        /* Create patient from relevant fields in the form and the parent */
+
         Patient patient = new Patient(firstname.getText(), lastname.getText(),age.getText(), illness.getText());
-        /* Add patient to the ObservableList in the Model */
+
         model.addPatient(patient);
-        /* Close the window, so we get back to overview */
+
         Stage stage = (Stage) submitButton.getScene().getWindow();
         stage.close();
     }
