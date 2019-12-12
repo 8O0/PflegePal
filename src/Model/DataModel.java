@@ -20,6 +20,11 @@ public class DataModel {
         System.out.println("Patient was added.");
     }
 
+    public void addMedication(Medication medication) {
+        medications.add(medication);
+        System.out.println("Patient was added.");
+    }
+
     public ObservableList<Patient> getPatients() {
         return this.patients;
     }

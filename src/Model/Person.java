@@ -17,6 +17,12 @@ public class Person {
 		this.address = address;
 	}
 
+	public Person(String name, String surname, String age) {
+		this.name=name;
+		this.surname=surname;
+		this.age=age;
+	}
+
 	@Override
 	public String toString() {
 		return "Person [name=" + name + ", surname=" + surname + ", gender=" + gender + ", address=" + address

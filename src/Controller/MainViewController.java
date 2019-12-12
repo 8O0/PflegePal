@@ -1,5 +1,6 @@
 package Controller;
 
+import Model.DataModel;
 import Model.Patient;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -9,6 +10,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 import java.io.IOException;
 
@@ -32,6 +34,20 @@ public class MainViewController {
 
     @FXML
     public ListView<Patient> patientView;
+
+
+
+    private DataModel model;
+
+    public void initModel(DataModel model){
+        if (this.model != null){
+    throw new IllegalStateException("Model can only be initialized once");
+        }
+        this.model = model;
+patientView.setItems(model.getPatients());
+        System.out.println("Model init overview controller");
+    }
+
 
 
     public void handleMedicationButton() {
@@ -61,6 +77,7 @@ public class MainViewController {
             Stage stage = new Stage();
 
             stage.initModality(Modality.APPLICATION_MODAL);
+
             stage.setScene(new Scene(root1));
             stage.show();
         } catch (IOException e) {
@@ -76,8 +93,11 @@ public class MainViewController {
         try {
             root3 = fxmlLoader.load();
             Stage stage = new Stage();
+            AddPatientController addController =fxmlLoader.getController();
+            addController.initModel(model);
 
             stage.initModality(Modality.APPLICATION_MODAL);
+
             stage.setScene(new Scene(root3));
             stage.show();
         } catch (IOException e) {
