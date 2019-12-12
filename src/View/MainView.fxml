@@ -42,10 +42,15 @@
                   </HBox>
                </children>
             </VBox>
-            <Pane prefHeight="100.0" prefWidth="257.0" />
+            <Pane prefHeight="100.0" prefWidth="125.0" />
+            <Button fx:id="addpatientbutton" mnemonicParsing="false" onAction="#handleAddPatientButton" prefHeight="66.0" prefWidth="175.0" text="Add Patient">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
             <Button fx:id="weeklyplanbutton" mnemonicParsing="false" onAction="#handleWeekPlanButton" prefHeight="66.0" prefWidth="175.0" text="Weekly Plan">
                <font>
-                  <Font name="System Bold" size="18.0" />
+                  <Font size="18.0" />
                </font>
                <HBox.margin>
                   <Insets right="20.0" />

@@ -18,9 +18,11 @@ public class MainViewController {
     @FXML
     public Button medicationbutton;
 
-
     @FXML
     public Button weeklyplanbutton;
+
+    @FXML
+    public Button addpatientbutton;
 
     @FXML
     public Button importbutton;
@@ -37,7 +39,7 @@ public class MainViewController {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../View/MedicationView.fxml"));
         Parent root2;
         try {
-            root2 = (Parent) fxmlLoader.load();
+            root2 = fxmlLoader.load();
             Stage stage = new Stage();
 
             stage.initModality(Modality.APPLICATION_MODAL);
@@ -55,7 +57,7 @@ public class MainViewController {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../View/WeekPlanView.fxml"));
         Parent root1;
         try {
-            root1 = (Parent) fxmlLoader.load();
+            root1 = fxmlLoader.load();
             Stage stage = new Stage();
 
             stage.initModality(Modality.APPLICATION_MODAL);
@@ -67,5 +69,21 @@ public class MainViewController {
 
     }
 
+    public void handleAddPatientButton() {
+
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../View/AddPatientView.fxml"));
+        Parent root3;
+        try {
+            root3 = fxmlLoader.load();
+            Stage stage = new Stage();
+
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.setScene(new Scene(root3));
+            stage.show();
+        } catch (IOException e) {
+            System.err.println("Error");
+        }
+
+    }
 
 }
