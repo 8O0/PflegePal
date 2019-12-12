@@ -27,12 +27,12 @@
                   </Button>
                   <HBox prefHeight="61.0" prefWidth="296.0">
                      <children>
-                        <Button fx:id="importbutton" mnemonicParsing="false" prefHeight="26.0" prefWidth="109.0" text="Import">
+                        <Button fx:id="importbutton" mnemonicParsing="false" onAction="#handleImportButton" prefHeight="26.0" prefWidth="109.0" text="Import">
                            <HBox.margin>
                               <Insets left="5.0" right="5.0" top="10.0" />
                            </HBox.margin>
                         </Button>
-                        <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="95.0" text="Export">
+                        <Button mnemonicParsing="false" onAction="#handleExportButton" prefHeight="26.0" prefWidth="95.0" text="Export">
                            <HBox.margin>
                               <Insets left="5.0" right="5.0" top="10.0" />
                            </HBox.margin>

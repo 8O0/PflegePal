@@ -6,11 +6,9 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
-import javafx.stage.FileChooser;
-import javafx.stage.Modality;
-import javafx.stage.Stage;
-import javafx.stage.StageStyle;
+import javafx.stage.*;
 
+import java.io.File;
 import java.io.IOException;
 
 import Model.Patient;
@@ -74,10 +72,17 @@ public class MainViewController {
 	public void handleImportButton(){
 
 		FileChooser fs = new FileChooser();
+		fs.setTitle("Open CSV File");
+		File file = fs.showOpenDialog(new Stage());
+
 
 	}
 
 	public void handleExportButton(){
+
+		FileChooser fs = new FileChooser();
+		fs.setTitle("Save CSV File");
+		File file = fs.showOpenDialog(new Stage());
 		
 	}
 	
