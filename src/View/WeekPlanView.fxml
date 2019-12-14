@@ -28,12 +28,12 @@
                               <Insets top="20.0" />
                            </HBox.margin>
                         </Text>
-                        <TextField editable="false">
+                        <TextField editable="false" promptText="Name">
                            <HBox.margin>
                               <Insets left="5.0" right="2.0" top="20.0" />
                            </HBox.margin>
                         </TextField>
-                        <TextField editable="false">
+                        <TextField editable="false" promptText="Surname">
                            <HBox.margin>
                               <Insets left="2.0" right="5.0" top="20.0" />
                            </HBox.margin>
