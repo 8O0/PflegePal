@@ -82,7 +82,7 @@ public class MainViewController {
 
 		FileChooser fs = new FileChooser();
 		fs.setTitle("Save CSV File");
-		File file = fs.showOpenDialog(new Stage());
+		File file = fs.showSaveDialog(new Stage());
 		
 	}
 	
