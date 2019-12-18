@@ -221,7 +221,7 @@
                         <Insets left="5.0" right="5.0" />
                      </VBox.margin>
                   </Text>
-                  <ListView editable="true" prefHeight="393.0" prefWidth="160.0">
+                  <ListView fx:id="patientView" editable="true" prefHeight="393.0" prefWidth="160.0">
                      <VBox.margin>
                         <Insets bottom="5.0" left="5.0" right="5.0" />
                      </VBox.margin>

@@ -13,8 +13,11 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Scanner;
 
 public class MainViewController {
 
@@ -112,6 +115,8 @@ patientView.setItems(model.getPatients());
 
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Save CSV File");
+        fileChooser.setInitialFileName("data");
+        fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("CSV Comma Separated Value", "*.csv"));
 
         String userDirectoryString = System.getProperty("user.home");
         File userDirectory = new File(userDirectoryString);
@@ -128,7 +133,7 @@ patientView.setItems(model.getPatients());
     }
 
 
-    public void handleImportButton(){
+    public void handleImportButton() throws FileNotFoundException {
 
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Open CSV File");
@@ -145,6 +150,19 @@ patientView.setItems(model.getPatients());
         } else path = null;
 
         System.out.println(path);
+
+        List<List<String>> records = new ArrayList<>();
+        try (BufferedReader br = new BufferedReader(new FileReader(path))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                String[] values = line.split(";");
+                records.add(Arrays.asList(values));
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        System.out.println(records);
     }
 
 }

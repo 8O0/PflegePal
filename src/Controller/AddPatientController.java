@@ -4,6 +4,7 @@ import Model.DataModel;
 import Model.Patient;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -47,7 +48,10 @@ public class AddPatientController {
     @FXML
     private void handleSubmit() {
 
-        model.addPatient(new Patient(firstname.getText(), lastname.getText(),age.getText(), illness.getText()));
+        Patient p = new Patient(firstname.getText(), lastname.getText(),age.getText(), illness.getText());
+
+        model.addPatient(p);
+
 
         Stage stage = (Stage) submitButton.getScene().getWindow();
         stage.close();
