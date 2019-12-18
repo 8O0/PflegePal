@@ -48,9 +48,9 @@ public class AddPatientController {
     @FXML
     private void handleSubmit() {
 
-        Patient p = new Patient(firstname.getText(), lastname.getText(),age.getText(), illness.getText());
+        //Patient p = new Patient(firstname.getText(), lastname.getText(),age.getText(), illness.getText());
 
-        model.addPatient(p);
+        //model.addPatient(p);
 
 
         Stage stage = (Stage) submitButton.getScene().getWindow();

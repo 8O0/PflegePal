@@ -2,6 +2,7 @@ package Controller;
 
 import Model.DataModel;
 import Model.Patient;
+import Model.Person;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -151,18 +152,23 @@ patientView.setItems(model.getPatients());
 
         System.out.println(path);
 
-        List<List<String>> records = new ArrayList<>();
+        List<Patient> p = new ArrayList<>();
+
+
+        List<List<String>>  records = new ArrayList<>();
         try (BufferedReader br = new BufferedReader(new FileReader(path))) {
             String line;
             while ((line = br.readLine()) != null) {
                 String[] values = line.split(";");
                 records.add(Arrays.asList(values));
+
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
+        records.forEach(sublist -> sublist.forEach(element -> System.out.println(element)));
 
-        System.out.println(records);
-    }
+
+        }
 
 }
