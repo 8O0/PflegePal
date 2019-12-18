@@ -28,7 +28,25 @@ public class Person {
 		return "Person [name=" + name + ", surname=" + surname + ", gender=" + gender + ", address=" + address
 				+ ", age=" + age + "]";
 	}
-	
-	
-	
+
+
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+
+		Person person = (Person) o;
+
+		if (!name.equals(person.name)) return false;
+		if (!surname.equals(person.surname)) return false;
+		return gender.equals(person.gender);
+	}
+
+	@Override
+	public int hashCode() {
+		int result = name.hashCode();
+		result = 31 * result + surname.hashCode();
+		result = 31 * result + gender.hashCode();
+		return result;
+	}
 }
