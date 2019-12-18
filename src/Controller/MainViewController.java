@@ -8,10 +8,12 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
+import javafx.stage.FileChooser;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
+import java.io.File;
 import java.io.IOException;
 
 public class MainViewController {
@@ -104,6 +106,45 @@ patientView.setItems(model.getPatients());
             System.err.println("Error");
         }
 
+    }
+
+    public void handleExportButton(){
+
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Save CSV File");
+
+        String userDirectoryString = System.getProperty("user.home");
+        File userDirectory = new File(userDirectoryString);
+
+        fileChooser.setInitialDirectory(userDirectory);
+
+        File chosenFile = fileChooser.showSaveDialog(null);
+        String path;
+        if(chosenFile != null){
+            path = chosenFile.getPath();
+        } else path = null;
+
+        System.out.println(path);
+    }
+
+
+    public void handleImportButton(){
+
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Open CSV File");
+
+        String userDirectoryString = System.getProperty("user.home");
+        File userDirectory = new File(userDirectoryString);
+
+        fileChooser.setInitialDirectory(userDirectory);
+
+        File chosenFile = fileChooser.showOpenDialog(null);
+        String path;
+        if(chosenFile != null){
+            path = chosenFile.getPath();
+        } else path = null;
+
+        System.out.println(path);
     }
 
 }
