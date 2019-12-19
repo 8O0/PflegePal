@@ -1,6 +1,7 @@
 package Controller;
 
 import Model.DataModel;
+import Model.Medication;
 import Model.Patient;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -34,6 +35,9 @@ public class MainViewController {
     @FXML
     public ListView<Patient> patientView;
 
+    @FXML
+    public ListView<Medication> medicationList;
+
     private DataModel model;
 
 
@@ -44,6 +48,9 @@ public class MainViewController {
         try {
             root2 = fxmlLoader.load();
             Stage stage = new Stage();
+
+            MedicationController medicationController = fxmlLoader.getController();
+            medicationController.initModel(model);
 
             stage.initModality(Modality.APPLICATION_MODAL);
             stage.setScene(new Scene(root2));
@@ -115,6 +122,7 @@ public class MainViewController {
         }
         this.model = model;
         patientView.setItems(model.getPatients());
+        medicationList.setItems((model.getMedications()));
         System.out.println("Model init overview controller");
     }
 }

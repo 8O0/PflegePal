@@ -11,6 +11,6 @@ public class Patient extends Person {
     }
 
     public String toString() {
-        return "Name: " + super.toString() + " Illness: " + illness;
+        return super.toString() + " Illness: " + illness;
     }
 }

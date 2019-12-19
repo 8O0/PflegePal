@@ -27,14 +27,14 @@ public class MedicationController {
 
 
     /* Contains the data model for the Happy Children Healthcare */
-    private DataModel model = new DataModel();
+    private DataModel model ;
 
     public void initModel(DataModel model) {
         if (this.model != null) {
             throw new IllegalStateException("Model can only be initialized once");
         }
         this.model = model;
-        medicationList.setItems(model.getMedications());
+        medicationList.setItems((model.getMedications()));
         System.out.println("Model init overview controller");
     }
 
@@ -52,9 +52,11 @@ public class MedicationController {
 
         model.addMedication(medication);
 
+
         Stage stage = (Stage) SubmitButton.getScene().getWindow();
         stage.close();
     }
+
 
 
 
