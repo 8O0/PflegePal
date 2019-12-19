@@ -33,9 +33,7 @@ public class AddPatientController {
         this.model = model;
     }
 
-    /*
-     * Called when the user clicks "Cancel".
-     */
+
     @FXML
     private void handleCancel() {
         /* Close the window */
@@ -47,7 +45,7 @@ public class AddPatientController {
     @FXML
     private void handleSubmit() {
 
-        Patient patient = new Patient(firstname.getText(), lastname.getText(),age.getText(), illness.getText());
+        Patient patient = new Patient(firstname.getText(), lastname.getText(), age.getText(), illness.getText());
 
         model.addPatient(patient);
 

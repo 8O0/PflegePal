@@ -1,46 +1,50 @@
 package Main;
-	
+
+import Controller.AddPatientController;
+import Controller.MainViewController;
+import Model.DataModel;
 import javafx.application.Application;
-import javafx.scene.Parent;
-import javafx.stage.Stage;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
-import javafx.fxml.FXMLLoader;
+import javafx.stage.Stage;
 
-import java.io.File;
 import java.io.IOException;
-import java.net.URL;
 
 //
 public class Main extends Application {
 
-	private Stage primaryStage;
-	private BorderPane rootLayout;
-	@Override
-	public void start(Stage primaryStage) {
+    private Stage primaryStage;
+    private BorderPane rootLayout;
 
-		this.primaryStage = primaryStage;
-		this.primaryStage.setTitle("CareGiver");
+    public static void main(String[] args) {
+        launch(args);
+    }
 
-		FXMLLoader loader = new FXMLLoader();
-		loader.setLocation(Main.class.getResource("../View/MainView.fxml"));
+    @Override
+    public void start(Stage primaryStage) {
 
-		try {
-			rootLayout = (BorderPane) loader.load();
-		} catch (IOException e){
-			e.printStackTrace();
-		}
+        this.primaryStage = primaryStage;
+        this.primaryStage.setTitle("CareGiver");
 
-		Scene scene = new Scene(rootLayout);
-		primaryStage.setScene(scene);
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(Main.class.getResource("../View/MainView.fxml"));
 
-		primaryStage.show();
+        try {
+            rootLayout = loader.load();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
-	}
-	
-	public static void main(String[] args) {
-		launch(args);
-	}
+        DataModel model = new DataModel();
+        MainViewController mainViewController = loader.getController();
+        mainViewController.initModel(model);
+
+        Scene scene = new Scene(rootLayout);
+        primaryStage.setScene(scene);
+        primaryStage.show();
+
+    }
 
 
 }

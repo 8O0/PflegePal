@@ -9,6 +9,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
+import javafx.scene.control.TextField;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -25,6 +26,12 @@ public class WeekPlanViewController {
         @FXML
         public ListView<Medication> medicationView;
 
+        @FXML
+        public TextField name;
+
+        @FXML
+        public TextField amount;
+
 
         /* Contains the data model for the Happy Children Healthcare */
         private DataModel model;
@@ -34,10 +41,14 @@ public class WeekPlanViewController {
                 throw new IllegalStateException("Model can only be initialized once");
             }
             this.model = model;
-            medicationView.setItems(model.getMedications());
-            System.out.println("Model init overview controller");
-        }
 
+        }
+    @FXML
+    private void handleCancel() {
+        /* Close the window */
+        Stage stage = (Stage) CancelButton.getScene().getWindow();
+        stage.close();
+    }
 
 
 

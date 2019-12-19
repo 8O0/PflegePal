@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane prefHeight="346.0" prefWidth="322.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.AddPatientController">
+<BorderPane prefHeight="244.0" prefWidth="322.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.AddPatientController">
    <top>
       <Label text="Add Patient" BorderPane.alignment="CENTER">
          <padding>
@@ -91,7 +91,7 @@
       </VBox>
    </right>
    <bottom>
-      <HBox prefHeight="60.0" prefWidth="322.0" BorderPane.alignment="CENTER">
+      <HBox prefHeight="41.0" prefWidth="322.0" BorderPane.alignment="CENTER">
          <children>
             <Button fx:id="submitButton" mnemonicParsing="false" onAction="#handleSubmit" text="Submit">
                <HBox.margin>
