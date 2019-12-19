@@ -3,6 +3,7 @@ package Controller;
 import Model.DataModel;
 import Model.Patient;
 import Model.Person;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
