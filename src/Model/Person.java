@@ -6,9 +6,9 @@ public class Person {
 	private String surname;
 	private String gender;
 	private String address;
-	private String age;
+	private int age;
 
-	public Person(String surname, String name, String age, String gender, String address) {
+	public Person(String surname, String name, int age, String gender, String address) {
 
 		this.name = name;
 		this.surname = surname;
@@ -17,7 +17,7 @@ public class Person {
 		this.address = address;
 	}
 
-	public Person(String surname, String name, String age) {
+	public Person(String surname, String name, int age) {
 		this.name = name;
 		this.surname = surname;
 		this.age = age;

@@ -4,7 +4,7 @@ public class Patient extends Person {
 
     private final String illness;
 
-    public Patient(String surname, String name, String age, String illness) {
+    public Patient(String surname, String name, int age, String illness) {
         super(name, surname, age);
         this.illness = illness;
 
