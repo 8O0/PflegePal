@@ -1,5 +1,6 @@
 package Main;
 
+import Controller.AddPatientController;
 import Controller.MainViewController;
 import Model.DataModel;
 import javafx.application.Application;
@@ -8,8 +9,13 @@ import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
+import java.io.IOException;
+
+//
 public class Main extends Application {
+
     private Stage primaryStage;
+    private BorderPane rootLayout;
 
     public static void main(String[] args) {
         launch(args);
@@ -17,20 +23,28 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) {
+
         this.primaryStage = primaryStage;
-        this.primaryStage.setTitle("Medication Plan");
+        this.primaryStage.setTitle("CareGiver");
+
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(Main.class.getResource("../View/MainView.fxml"));
 
         try {
-
-            FXMLLoader loader = new FXMLLoader();
-            BorderPane root = loader.load(getClass().getResource("../View/MainView.fxml"));
-            Scene scene = new Scene(root, 800, 600);
-
-
-            primaryStage.setScene(scene);
-            primaryStage.show();
-        } catch (Exception e) {
+            rootLayout = loader.load();
+        } catch (IOException e) {
             e.printStackTrace();
         }
+
+        DataModel model = new DataModel();
+        MainViewController mainViewController = loader.getController();
+        mainViewController.initModel(model);
+
+        Scene scene = new Scene(rootLayout);
+        primaryStage.setScene(scene);
+        primaryStage.show();
+
     }
+
+
 }

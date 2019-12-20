@@ -13,6 +13,8 @@ public class DataModel {
         patients = FXCollections.observableArrayList();
         medications = FXCollections.observableArrayList();
         System.out.println("Model was initialized");
+
+
     }
 
     public void addPatient(Patient patient) {
@@ -22,7 +24,7 @@ public class DataModel {
 
     public void addMedication(Medication medication) {
         medications.add(medication);
-        System.out.println("Patient was added.");
+        System.out.println("Medication was added.");
     }
 
     public ObservableList<Patient> getPatients() {

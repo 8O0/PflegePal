@@ -4,14 +4,17 @@ public class Medication {
 
     private String name;
 
-    private int ammount;
+    private String amount;
     //private LocalDate expirationDate;
 
 
-    public Medication(String name, int ammount) {
+    public Medication(String name, String amount) {
         this.name = name;
 
-        this.ammount = ammount;
+        this.amount = amount;
     }
 
+    public String toString() {
+        return "Name: " + super.toString() + " Amount: " + amount;
+    }
 }

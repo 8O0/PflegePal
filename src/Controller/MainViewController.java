@@ -1,9 +1,9 @@
 package Controller;
 
 import Model.DataModel;
+import Model.Medication;
 import Model.Patient;
-import Model.Person;
-import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -13,13 +13,9 @@ import javafx.scene.control.ListView;
 import javafx.stage.FileChooser;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 
-import java.io.*;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Scanner;
+import java.io.File;
+import java.io.IOException;
 
 public class MainViewController {
 
@@ -31,9 +27,6 @@ public class MainViewController {
     public Button weeklyplanbutton;
 
     @FXML
-    public Button addpatientbutton;
-
-    @FXML
     public Button importbutton;
 
     @FXML
@@ -42,19 +35,10 @@ public class MainViewController {
     @FXML
     public ListView<Patient> patientView;
 
-
+    @FXML
+    public ListView<Medication> medicationList;
 
     private DataModel model;
-
-    public void initModel(DataModel model){
-        if (this.model != null){
-    throw new IllegalStateException("Model can only be initialized once");
-        }
-        this.model = model;
-patientView.setItems(model.getPatients());
-        System.out.println("Model init overview controller");
-    }
-
 
 
     public void handleMedicationButton() {
@@ -64,6 +48,9 @@ patientView.setItems(model.getPatients());
         try {
             root2 = fxmlLoader.load();
             Stage stage = new Stage();
+
+            MedicationController medicationController = fxmlLoader.getController();
+            medicationController.initModel(model);
 
             stage.initModality(Modality.APPLICATION_MODAL);
             stage.setScene(new Scene(root2));
@@ -84,7 +71,6 @@ patientView.setItems(model.getPatients());
             Stage stage = new Stage();
 
             stage.initModality(Modality.APPLICATION_MODAL);
-
             stage.setScene(new Scene(root1));
             stage.show();
         } catch (IOException e) {
@@ -93,83 +79,50 @@ patientView.setItems(model.getPatients());
 
     }
 
-    public void handleAddPatientButton() {
+    public void handleImportButton() {
 
+        FileChooser fs = new FileChooser();
+        fs.setTitle("Open CSV File");
+        File file = fs.showOpenDialog(new Stage());
+
+
+    }
+
+    public void handleExportButton() {
+
+        FileChooser fs = new FileChooser();
+        fs.setTitle("Save CSV File");
+        File file = fs.showSaveDialog(new Stage());
+
+    }
+
+
+    public void handleAddPatientButton(ActionEvent actionEvent) {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../View/AddPatientView.fxml"));
         Parent root3;
         try {
             root3 = fxmlLoader.load();
             Stage stage = new Stage();
-            AddPatientController addController =fxmlLoader.getController();
-            addController.initModel(model);
+            AddPatientController addPatientController = fxmlLoader.getController();
+            addPatientController.initModel(model);
 
             stage.initModality(Modality.APPLICATION_MODAL);
-
             stage.setScene(new Scene(root3));
             stage.show();
         } catch (IOException e) {
             System.err.println("Error");
         }
 
+
     }
 
-    public void handleExportButton(){
-
-        FileChooser fileChooser = new FileChooser();
-        fileChooser.setTitle("Save CSV File");
-        fileChooser.setInitialFileName("data");
-        fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("CSV Comma Separated Value", "*.csv"));
-
-        String userDirectoryString = System.getProperty("user.home");
-        File userDirectory = new File(userDirectoryString);
-
-        fileChooser.setInitialDirectory(userDirectory);
-
-        File chosenFile = fileChooser.showSaveDialog(null);
-        String path;
-        if(chosenFile != null){
-            path = chosenFile.getPath();
-        } else path = null;
-
-        System.out.println(path);
+    public void initModel(DataModel model) {
+        if (this.model != null) {
+            throw new IllegalStateException("Model can only be initialized once");
+        }
+        this.model = model;
+        patientView.setItems(model.getPatients());
+        medicationList.setItems((model.getMedications()));
+        System.out.println("Model init overview controller");
     }
-
-
-    public void handleImportButton() throws FileNotFoundException {
-
-        FileChooser fileChooser = new FileChooser();
-        fileChooser.setTitle("Open CSV File");
-
-        String userDirectoryString = System.getProperty("user.home");
-        File userDirectory = new File(userDirectoryString);
-
-        fileChooser.setInitialDirectory(userDirectory);
-
-        File chosenFile = fileChooser.showOpenDialog(null);
-        String path;
-        if(chosenFile != null){
-            path = chosenFile.getPath();
-        } else path = null;
-
-        System.out.println(path);
-
-        List<Patient> p = new ArrayList<>();
-
-
-        List<List<String>>  records = new ArrayList<>();
-        try (BufferedReader br = new BufferedReader(new FileReader(path))) {
-            String line;
-            while ((line = br.readLine()) != null) {
-                String[] values = line.split(";");
-                records.add(Arrays.asList(values));
-
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        records.forEach(sublist -> sublist.forEach(element -> System.out.println(element)));
-
-
-        }
-
 }
