@@ -16,6 +16,8 @@ import javafx.stage.Stage;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainViewController {
 
@@ -85,6 +87,13 @@ public class MainViewController {
         fs.setTitle("Open CSV File");
         File file = fs.showOpenDialog(new Stage());
 
+        File filePath = file.getAbsoluteFile();
+
+        System.out.println(filePath);
+
+        List<Patient> inputList = new ArrayList<Patient>();
+
+
 
     }
 
@@ -93,6 +102,8 @@ public class MainViewController {
         FileChooser fs = new FileChooser();
         fs.setTitle("Save CSV File");
         File file = fs.showSaveDialog(new Stage());
+
+
 
     }
 
