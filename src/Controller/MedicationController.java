@@ -51,7 +51,6 @@ public class MedicationController {
     private void handleSubmit() {
         Medication medication = new Medication(medicationName.getText(), amount.getText(), medicationComment.getText());
         model.addMedication(medication);
-        Stage stage = (Stage) submitButton.getScene().getWindow();
-
+        submitButton.getScene().getWindow();
     }
 }

@@ -197,7 +197,7 @@
                                                         <Insets top="10.0" />
                                                     </VBox.margin>
                                                 </CheckBox>
-                                                <Button fx:id="prescribeButton" mnemonicParsing="false" onAction="#ifPrescribed" text="Prescribe">
+                                                <Button fx:id="prescribeButton" mnemonicParsing="false" onAction="#handlePrescribedButton" text="Prescribe">
                                                     <VBox.margin>
                                                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                                                     </VBox.margin>

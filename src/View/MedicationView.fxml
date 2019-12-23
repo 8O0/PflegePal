@@ -83,7 +83,7 @@
                         <Pane prefHeight="39.0" prefWidth="744.0" />
                         <HBox prefHeight="35.0" prefWidth="175.0">
                             <children>
-                                <Button fx:id="cancelButton" mnemonicParsing="false" onAction="#handleCancel" text="Cancel">
+                                <Button fx:id="cancelButton" mnemonicParsing="false" onAction="#handleCancel" text="Close">
                                     <padding>
                                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                     </padding>
