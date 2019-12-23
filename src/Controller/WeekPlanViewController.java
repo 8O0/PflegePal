@@ -33,7 +33,6 @@ public class WeekPlanViewController {
         public TextField amount;
 
 
-        /* Contains the data model for the Happy Children Healthcare */
         private DataModel model;
 
         public void initModel(DataModel model) {

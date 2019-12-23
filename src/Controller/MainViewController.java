@@ -10,6 +10,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.FileChooser;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -33,12 +34,16 @@ public class MainViewController {
     public Button exportbutton;
 
     @FXML
+    public Button prescribeButton;
+
+    @FXML
     public ListView<Patient> patientView;
 
     @FXML
     public ListView<Medication> medicationList;
 
     private DataModel model;
+
 
     public void handleWeekPlanButton() {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../View/WeekPlanView.fxml"));
@@ -52,7 +57,6 @@ public class MainViewController {
         } catch (IOException e) {
             System.err.println("Error");
         }
-
     }
 
     public void handleImportButton() {
@@ -85,7 +89,6 @@ public class MainViewController {
     }
 
     public void handleMedicationButton() {
-
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../View/MedicationView.fxml"));
         Parent root2;
         try {
@@ -104,11 +107,16 @@ public class MainViewController {
     public void initModel(DataModel model) {
         if (this.model != null)
             throw new IllegalStateException("Model can only be initialized once");
-         this.model = model;
-        medicationList.setItems((model.getMedications()));
+        this.model = model;
+        medicationList.setItems(model.getMedications());
         patientView.setItems(model.getPatients());
         System.out.println("Model init overview controller");
     }
 
 
+    public void ifPrescribed(ActionEvent actionEvent) {
+    }
+
+    public void ifPressed(MouseEvent mouseEvent) {
+    }
 }

@@ -36,8 +36,8 @@ public class MedicationController {
             throw new IllegalStateException("Model can only be initialized once");
         }
         this.model = model;
-        // medicationList.setItems((model.getMedications()));
-        // System.out.println("Model init overview controller");
+        medicationList.setItems(model.getMedications());
+        System.out.println("Model init overview controller");
     }
 
     @FXML
@@ -52,6 +52,6 @@ public class MedicationController {
         Medication medication = new Medication(medicationName.getText(), amount.getText(), medicationComment.getText());
         model.addMedication(medication);
         Stage stage = (Stage) submitButton.getScene().getWindow();
-        stage.close();
+
     }
 }

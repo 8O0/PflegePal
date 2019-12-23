@@ -15,7 +15,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane minHeight="600.0" minWidth="800.0" prefHeight="600.0" prefWidth="912.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.MainViewController">
+<BorderPane minHeight="600.0" minWidth="800.0" prefHeight="600.0" prefWidth="912.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.MainViewController">
     <bottom>
         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0" style="-fx-background-color: grey;" BorderPane.alignment="CENTER">
             <children>
@@ -109,19 +109,6 @@
                         </Text>
                         <HBox prefHeight="56.0" prefWidth="342.0">
                             <children>
-                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Name">
-                                    <HBox.margin>
-                                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                                    </HBox.margin>
-                                    <font>
-                                        <Font size="12.0" />
-                                    </font>
-                                </Text>
-                                <TextField>
-                                    <HBox.margin>
-                                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                                    </HBox.margin>
-                                </TextField>
                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Surname">
                                     <font>
                                         <Font size="12.0" />
@@ -130,7 +117,20 @@
                                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                     </HBox.margin>
                                 </Text>
-                                <TextField>
+                                <TextField editable="false" text="Franziska">
+                                    <HBox.margin>
+                                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                    </HBox.margin>
+                                </TextField>
+                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Name">
+                                    <HBox.margin>
+                                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                    </HBox.margin>
+                                    <font>
+                                        <Font size="12.0" />
+                                    </font>
+                                </Text>
+                                <TextField editable="false" text="Fürsorg">
                                     <HBox.margin>
                                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                     </HBox.margin>
@@ -197,7 +197,7 @@
                                                         <Insets top="10.0" />
                                                     </VBox.margin>
                                                 </CheckBox>
-                                                <Button mnemonicParsing="false" text="Prescribe">
+                                                <Button fx:id="prescribeButton" mnemonicParsing="false" onAction="#ifPrescribed" text="Prescribe">
                                                     <VBox.margin>
                                                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                                                     </VBox.margin>
@@ -221,7 +221,7 @@
                                 <Insets left="5.0" right="5.0" />
                             </VBox.margin>
                         </Text>
-                        <ListView fx:id="patientView" editable="true" prefHeight="357.0" prefWidth="562.0">
+                        <ListView fx:id="patientView" editable="true" onMouseClicked="#ifPressed" prefHeight="357.0" prefWidth="562.0">
                             <VBox.margin>
                                 <Insets bottom="5.0" left="5.0" right="5.0" />
                             </VBox.margin>
