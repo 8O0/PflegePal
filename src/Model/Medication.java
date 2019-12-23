@@ -3,18 +3,16 @@ package Model;
 public class Medication {
 
     private String name;
-
     private String amount;
-    //private LocalDate expirationDate;
+    private String comment;
 
-
-    public Medication(String name, String amount) {
+    public Medication(String name, String amount, String comment) {
         this.name = name;
-
         this.amount = amount;
+        this.comment = comment;
     }
 
     public String toString() {
-        return "Name: " + super.toString() + " Amount: " + amount;
+        return "Name: " + name + ", Amount: " + amount + ", Additional Info: " + comment;
     }
 }

@@ -33,7 +33,6 @@ public class AddPatientController {
         this.model = model;
     }
 
-
     @FXML
     private void handleCancel() {
         /* Close the window */
@@ -41,14 +40,10 @@ public class AddPatientController {
         stage.close();
     }
 
-
     @FXML
     private void handleSubmit() {
-
         Patient patient = new Patient(firstname.getText(), lastname.getText(), age.getText(), illness.getText());
-
         model.addPatient(patient);
-
         Stage stage = (Stage) submitButton.getScene().getWindow();
         stage.close();
     }

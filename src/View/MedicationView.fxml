@@ -12,7 +12,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane minHeight="480.0" minWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.MedicationController">
+<BorderPane minHeight="480.0" minWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.MedicationController">
     <center>
         <BorderPane prefHeight="200.0" prefWidth="547.0" BorderPane.alignment="CENTER">
             <center>
@@ -58,7 +58,7 @@
                                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                     </VBox.margin>
                                 </TextField>
-                                <TextArea prefHeight="200.0" prefWidth="200.0">
+                                <TextArea fx:id="medicationComment" prefHeight="200.0" prefWidth="200.0">
                                     <VBox.margin>
                                         <Insets bottom="10.0" left="5.0" right="5.0" top="5.0" />
                                     </VBox.margin>
@@ -83,7 +83,7 @@
                         <Pane prefHeight="39.0" prefWidth="744.0" />
                         <HBox prefHeight="35.0" prefWidth="175.0">
                             <children>
-                                <Button fx:id="CancelButton" mnemonicParsing="false" onAction="#handleCancel" text="Cancel">
+                                <Button fx:id="cancelButton" mnemonicParsing="false" onAction="#handleCancel" text="Cancel">
                                     <padding>
                                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                     </padding>
@@ -91,7 +91,7 @@
                                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                     </HBox.margin>
                                 </Button>
-                                <Button fx:id="SubmitButton" mnemonicParsing="false" onAction="#handleSubmit" text="Confirm">
+                                <Button fx:id="submitButton" mnemonicParsing="false" onAction="#handleSubmit" text="Confirm">
                                     <padding>
                                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                     </padding>

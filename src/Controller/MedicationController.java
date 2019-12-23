@@ -5,60 +5,53 @@ import Model.Medication;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 public class MedicationController {
 
     @FXML
-    public Button SubmitButton;
+    public Button submitButton;
 
     @FXML
-    public Button CancelButton;
+    public Button cancelButton;
 
     @FXML
     public ListView<Medication> medicationList;
 
     @FXML
-    public TextField name;
+    public TextField medicationName;
 
     @FXML
     public TextField amount;
 
+    @FXML
+    public TextArea medicationComment;
 
-    /* Contains the data model for the Happy Children Healthcare */
-    private DataModel model ;
+    private DataModel model;
 
     public void initModel(DataModel model) {
         if (this.model != null) {
             throw new IllegalStateException("Model can only be initialized once");
         }
         this.model = model;
-        medicationList.setItems((model.getMedications()));
-        System.out.println("Model init overview controller");
+        // medicationList.setItems((model.getMedications()));
+        // System.out.println("Model init overview controller");
     }
 
     @FXML
     private void handleCancel() {
         /* Close the window */
-        Stage stage = (Stage) CancelButton.getScene().getWindow();
+        Stage stage = (Stage) cancelButton.getScene().getWindow();
         stage.close();
     }
 
     @FXML
     private void handleSubmit() {
-
-        Medication medication = new Medication(name.getText(), amount.getText());
-
+        Medication medication = new Medication(medicationName.getText(), amount.getText(), medicationComment.getText());
         model.addMedication(medication);
-
-
-        Stage stage = (Stage) SubmitButton.getScene().getWindow();
+        Stage stage = (Stage) submitButton.getScene().getWindow();
         stage.close();
     }
-
-
-
-
-
 }

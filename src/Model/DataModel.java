@@ -13,8 +13,6 @@ public class DataModel {
         patients = FXCollections.observableArrayList();
         medications = FXCollections.observableArrayList();
         System.out.println("Model was initialized");
-
-
     }
 
     public void addPatient(Patient patient) {
