@@ -119,4 +119,7 @@ public class MainViewController {
 
     public void ifPressed(MouseEvent mouseEvent) {
     }
+
+    public void handlePrescribedButton(ActionEvent actionEvent) {
+    }
 }
