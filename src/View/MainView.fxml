@@ -162,42 +162,42 @@
                                         </ListView>
                                         <VBox prefHeight="271.0" prefWidth="216.0">
                                             <children>
-                                                <CheckBox mnemonicParsing="false" text="Monday">
+                                                <CheckBox fx:id="monday" mnemonicParsing="false" text="Monday">
                                                     <VBox.margin>
                                                         <Insets top="20.0" />
                                                     </VBox.margin>
                                                 </CheckBox>
-                                                <CheckBox mnemonicParsing="false" text="Tuesday">
+                                                <CheckBox fx:id="tuesday" mnemonicParsing="false" text="Tuesday">
                                                     <VBox.margin>
                                                         <Insets top="10.0" />
                                                     </VBox.margin>
                                                 </CheckBox>
-                                                <CheckBox mnemonicParsing="false" text="Wednesday">
+                                                <CheckBox fx:id="wednesday" mnemonicParsing="false" text="Wednesday">
                                                     <VBox.margin>
                                                         <Insets top="10.0" />
                                                     </VBox.margin>
                                                 </CheckBox>
-                                                <CheckBox mnemonicParsing="false" text="Thursday">
+                                                <CheckBox fx:id="thursday" mnemonicParsing="false" text="Thursday">
                                                     <VBox.margin>
                                                         <Insets top="10.0" />
                                                     </VBox.margin>
                                                 </CheckBox>
-                                                <CheckBox mnemonicParsing="false" text="Friday">
+                                                <CheckBox fx:id="friday" mnemonicParsing="false" text="Friday">
                                                     <VBox.margin>
                                                         <Insets top="10.0" />
                                                     </VBox.margin>
                                                 </CheckBox>
-                                                <CheckBox mnemonicParsing="false" text="Saturday">
+                                                <CheckBox fx:id="saturday" mnemonicParsing="false" text="Saturday">
                                                     <VBox.margin>
                                                         <Insets top="10.0" />
                                                     </VBox.margin>
                                                 </CheckBox>
-                                                <CheckBox mnemonicParsing="false" text="Sunday">
+                                                <CheckBox fx:id="sunday" mnemonicParsing="false" text="Sunday">
                                                     <VBox.margin>
                                                         <Insets top="10.0" />
                                                     </VBox.margin>
                                                 </CheckBox>
-                                                <Button fx:id="prescribeButton" mnemonicParsing="false" text="Prescribe">
+                                                <Button fx:id="prescribeButton" mnemonicParsing="false" onAction="#handlePrescribeButton" text="Prescribe">
                                                     <VBox.margin>
                                                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                                                     </VBox.margin>

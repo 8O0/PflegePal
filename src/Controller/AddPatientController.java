@@ -32,24 +32,16 @@ public class AddPatientController {
         this.model = model;
     }
 
-    /*
-     * Called when the user clicks "Cancel".
-     */
     @FXML
     private void handleCancel() {
-
         Stage stage = (Stage) cancelButton.getScene().getWindow();
         stage.close();
     }
 
-
     @FXML
     private void handleSubmit() {
-
         Patient patient = new Patient(firstname.getText(), lastname.getText(),Integer.valueOf(age.getText()).intValue(), illness.getText());
-
         model.addPatient(patient);
-
         Stage stage = (Stage) submitButton.getScene().getWindow();
         stage.close();
     }

@@ -9,18 +9,16 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.ListView;
 import javafx.stage.FileChooser;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
-import javax.swing.filechooser.FileNameExtensionFilter;
 import java.io.*;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
-import java.util.function.Function;
 
 import static java.util.stream.Collectors.toList;
 
@@ -40,6 +38,30 @@ public class MainViewController {
     public Button exportbutton;
 
     @FXML
+    public Button prescribeButton;
+
+    @FXML
+    public CheckBox monday;
+
+    @FXML
+    public CheckBox tuesday;
+
+    @FXML
+    public CheckBox wednesday;
+
+    @FXML
+    public CheckBox thursday;
+
+    @FXML
+    public CheckBox friday;
+
+    @FXML
+    public CheckBox saturday;
+
+    @FXML
+    public CheckBox sunday;
+
+    @FXML
     public ListView<Patient> patientView;
 
     @FXML
@@ -47,6 +69,16 @@ public class MainViewController {
 
     private DataModel model;
 
+
+    public void initModel(DataModel model) {
+        if (this.model != null) {
+            throw new IllegalStateException("Model can only be initialized once");
+        }
+        this.model = model;
+        patientView.setItems(model.getPatients());
+        medicationList.setItems((model.getMedications()));
+        System.out.println("Model init overview controller");
+    }
 
     public void handleMedicationButton() {
 
@@ -65,9 +97,7 @@ public class MainViewController {
         } catch (IOException e) {
             System.err.println("Error" + e.getMessage());
         }
-
     }
-
 
     public void handleWeekPlanButton() {
 
@@ -76,6 +106,7 @@ public class MainViewController {
         try {
             root1 = fxmlLoader.load();
             Stage stage = new Stage();
+
 
             stage.initModality(Modality.APPLICATION_MODAL);
             stage.setScene(new Scene(root1));
@@ -117,21 +148,14 @@ public class MainViewController {
         for (int i = 0; i < inputList.size(); i++) {
             model.addPatient(inputList.get(i));
         }
-
     }
-
-
 
     public void handleExportButton() {
 
         FileChooser fs = new FileChooser();
         fs.setTitle("Save CSV File");
         File file = fs.showSaveDialog(new Stage());
-
-
-
     }
-
 
     public void handleAddPatientButton(ActionEvent actionEvent) {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../View/AddPatientView.fxml"));
@@ -148,17 +172,29 @@ public class MainViewController {
         } catch (IOException e) {
             System.err.println("Error");
         }
-
-
     }
 
-    public void initModel(DataModel model) {
-        if (this.model != null) {
-            throw new IllegalStateException("Model can only be initialized once");
-        }
-        this.model = model;
-        patientView.setItems(model.getPatients());
-        medicationList.setItems((model.getMedications()));
-        System.out.println("Model init overview controller");
+    public void handlePrescribeButton(ActionEvent actionEvent) {
+        Patient tempPatient = new Patient();
+        ArrayList<String> weekdays = new ArrayList<>();
+
+        if (monday.isSelected())
+            weekdays.add("Monday");
+        if (tuesday.isSelected())
+            weekdays.add("Tuesday");
+        if (wednesday.isSelected())
+            weekdays.add("Wednesday");
+        if (thursday.isSelected())
+            weekdays.add("Thursday");
+        if (friday.isSelected())
+            weekdays.add("Friday");
+        if (saturday.isSelected())
+            weekdays.add("Saturday");
+        if (sunday.isSelected())
+            weekdays.add("Sunday");
+
+        tempPatient=patientView.getSelectionModel().getSelectedItem();
+        tempPatient.addPrescribedDays(weekdays);
+
     }
 }

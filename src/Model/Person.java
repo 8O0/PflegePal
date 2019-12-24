@@ -23,16 +23,17 @@ public class Person {
 		this.age = age;
 	}
 
-	/*
-        @Override
-        public String toString() {
-            return "Person [name=" + name + ", surname=" + surname + ", gender=" + gender + ", address=" + address
-                    + ", age=" + age + "]";
-        }
-    */
+	public Person(String name, String surname) {
+		this.name = name;
+		this.surname = surname;
+	}
+
+	public Person() {
+	}
+
 	@Override
 	public String toString() {
-		return "Name: " + name + ", Surname: " + surname + ", Age: " + age + ", ";
-
+		return "Name: " + name + ", Surname: " + surname + ", Age: " + age;
 	}
+
 }
