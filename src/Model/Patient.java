@@ -1,5 +1,7 @@
 package Model;
 
+import java.util.function.Function;
+
 public class Patient extends Person {
 
     private final String illness;
@@ -13,4 +15,5 @@ public class Patient extends Person {
     public String toString() {
         return super.toString() + " Illness: " + illness;
     }
+    
 }

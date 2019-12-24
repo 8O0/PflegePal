@@ -14,10 +14,14 @@ import javafx.stage.FileChooser;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+import java.util.function.Function;
+
+import static java.util.stream.Collectors.toList;
 
 public class MainViewController {
 
@@ -91,11 +95,32 @@ public class MainViewController {
 
         System.out.println(filePath);
 
-        List<Patient> inputList = new ArrayList<Patient>();
+        InputStream inputStream = null;
 
+        try {
+            inputStream = new FileInputStream(file);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
 
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
+
+        List<Patient> inputList = bufferedReader.lines()
+                .map(mapToPatient)
+                .collect(toList());
+
+        System.out.println(inputList);
+
+        for (int i = 0; i < inputList.size(); i++) {
+            model.addPatient(inputList.get(i));
+        }
 
     }
+
+    public static Function<String, Patient> mapToPatient = (line) -> {
+        String[] p = line.split(", ");
+        return new Patient(p[0], p[1], Integer.parseInt(p[2]), p[3]);
+    };
 
     public void handleExportButton() {
 
