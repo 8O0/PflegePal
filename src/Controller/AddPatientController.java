@@ -9,7 +9,6 @@ import javafx.stage.Stage;
 
 public class AddPatientController {
 
-    /* Remember: Same names as the corresponding fx:id in SceneBuilder */
     @FXML
     public Button submitButton;
     @FXML
