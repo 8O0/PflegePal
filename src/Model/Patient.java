@@ -15,5 +15,10 @@ public class Patient extends Person {
     public String toString() {
         return super.toString() + " Illness: " + illness;
     }
+
+    public static Function<String, Patient> mapToPatient = (line) -> {
+        String[] p = line.split(", ");
+        return new Patient(p[0], p[1], Integer.parseInt(p[2]), p[3]);
+    };
     
 }

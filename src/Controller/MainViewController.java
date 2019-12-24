@@ -14,6 +14,7 @@ import javafx.stage.FileChooser;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
+import javax.swing.filechooser.FileNameExtensionFilter;
 import java.io.*;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
@@ -89,7 +90,9 @@ public class MainViewController {
 
         FileChooser fs = new FileChooser();
         fs.setTitle("Open CSV File");
+        fs.getExtensionFilters().add(new FileChooser.ExtensionFilter("CSV", "*.csv"));
         File file = fs.showOpenDialog(new Stage());
+
 
         File filePath = file.getAbsoluteFile();
 
@@ -106,7 +109,7 @@ public class MainViewController {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
 
         List<Patient> inputList = bufferedReader.lines()
-                .map(mapToPatient)
+                .map(Patient.mapToPatient)
                 .collect(toList());
 
         System.out.println(inputList);
@@ -117,10 +120,7 @@ public class MainViewController {
 
     }
 
-    public static Function<String, Patient> mapToPatient = (line) -> {
-        String[] p = line.split(", ");
-        return new Patient(p[0], p[1], Integer.parseInt(p[2]), p[3]);
-    };
+
 
     public void handleExportButton() {
 
