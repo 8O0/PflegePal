@@ -197,7 +197,7 @@
                                                         <Insets top="10.0" />
                                                     </VBox.margin>
                                                 </CheckBox>
-                                                <Button fx:id="prescribeButton" mnemonicParsing="false" onAction="#handlePrescribedButton" text="Prescribe">
+                                                <Button fx:id="prescribeButton" mnemonicParsing="false" text="Prescribe">
                                                     <VBox.margin>
                                                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                                                     </VBox.margin>
@@ -221,7 +221,7 @@
                                 <Insets left="5.0" right="5.0" />
                             </VBox.margin>
                         </Text>
-                        <ListView fx:id="patientView" editable="true" onMouseClicked="#ifPressed" prefHeight="357.0" prefWidth="562.0">
+                        <ListView fx:id="patientView" editable="true" prefHeight="357.0" prefWidth="562.0">
                             <VBox.margin>
                                 <Insets bottom="5.0" left="5.0" right="5.0" />
                             </VBox.margin>

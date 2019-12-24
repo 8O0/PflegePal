@@ -23,7 +23,6 @@ public class AddPatientController {
     @FXML
     public TextField illness;
 
-    /* Contains the data model for the Happy Children Healthcare */
     private DataModel model;
 
     public void initModel(DataModel model) {
@@ -38,7 +37,7 @@ public class AddPatientController {
      */
     @FXML
     private void handleCancel() {
-        /* Close the window */
+
         Stage stage = (Stage) cancelButton.getScene().getWindow();
         stage.close();
     }
