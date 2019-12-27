@@ -12,19 +12,13 @@ import javafx.stage.Stage;
 public class MedicationController {
 
     @FXML
-    public Button submitButton;
-
-    @FXML
-    public Button cancelButton;
+    public Button submitButton,cancelButton;
 
     @FXML
     public ListView<Medication> medicationList;
 
     @FXML
-    public TextField medicationName;
-
-    @FXML
-    public TextField amount;
+    public TextField medicationName,amount;
 
     @FXML
     public TextArea medicationComment;

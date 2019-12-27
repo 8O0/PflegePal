@@ -10,17 +10,10 @@ import javafx.stage.Stage;
 public class AddPatientController {
 
     @FXML
-    public Button submitButton;
+    public Button submitButton,cancelButton;
+
     @FXML
-    public Button cancelButton;
-    @FXML
-    public TextField firstname;
-    @FXML
-    public TextField lastname;
-    @FXML
-    public TextField age;
-    @FXML
-    public TextField illness;
+    public TextField firstname,lastname,age,illness;
 
     private DataModel model;
 

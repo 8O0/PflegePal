@@ -15,7 +15,6 @@ import javafx.scene.control.ListView;
 import javafx.stage.FileChooser;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -66,12 +65,6 @@ public class MainViewController {
         } catch (IOException e) {
             System.err.println("Error" + e.getMessage());
         }
-    }
-
-    private void setSceneMethod(Parent root, Stage stage) {
-        stage.initModality(Modality.APPLICATION_MODAL);
-        stage.setScene(new Scene(root));
-        stage.show();
     }
 
     @FXML
@@ -125,28 +118,9 @@ public class MainViewController {
         tempMedication = medicationList.getSelectionModel().getSelectedItem().getName();
 
         WeekPlanMedication weekPlanMedication = new WeekPlanMedication(tempPatient);
-
         weekPlanMedication.addPrescribedDays(weekdays, tempMedication);
 
-        System.out.println(weekPlanMedication.toString());
         model.addPrescribtion(weekPlanMedication);
-    }
-
-    private void checkWeekdays(ArrayList<String> weekdays) {
-        if (monday.isSelected())
-            weekdays.add("Monday");
-        if (tuesday.isSelected())
-            weekdays.add("Tuesday");
-        if (wednesday.isSelected())
-            weekdays.add("Wednesday");
-        if (thursday.isSelected())
-            weekdays.add("Thursday");
-        if (friday.isSelected())
-            weekdays.add("Friday");
-        if (saturday.isSelected())
-            weekdays.add("Saturday");
-        if (sunday.isSelected())
-            weekdays.add("Sunday");
     }
 
     public void handleImportButton() {
@@ -187,5 +161,28 @@ public class MainViewController {
         FileChooser fs = new FileChooser();
         fs.setTitle("Save CSV File");
         File file = fs.showSaveDialog(new Stage());
+    }
+
+    private void checkWeekdays(ArrayList<String> weekdays) {
+        if (monday.isSelected())
+            weekdays.add("Monday");
+        if (tuesday.isSelected())
+            weekdays.add("Tuesday");
+        if (wednesday.isSelected())
+            weekdays.add("Wednesday");
+        if (thursday.isSelected())
+            weekdays.add("Thursday");
+        if (friday.isSelected())
+            weekdays.add("Friday");
+        if (saturday.isSelected())
+            weekdays.add("Saturday");
+        if (sunday.isSelected())
+            weekdays.add("Sunday");
+    }
+
+    private void setSceneMethod(Parent root, Stage stage) {
+        stage.initModality(Modality.APPLICATION_MODAL);
+        stage.setScene(new Scene(root));
+        stage.show();
     }
 }

@@ -1,7 +1,6 @@
 package Controller;
 
 import Model.DataModel;
-import Model.Patient;
 import Model.WeekPlanMedication;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -10,6 +9,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 public class WeekPlanViewController {
+
     @FXML
     public Button returnButton;
 
