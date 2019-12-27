@@ -1,5 +1,7 @@
 package Model;
 
+import java.util.ArrayList;
+
 public class Medication {
 
     private String name;
@@ -15,4 +17,6 @@ public class Medication {
     public String toString() {
         return "Name: " + name + ", Amount: " + amount + ", Additional Info: " + comment;
     }
+
+    public String getName(){ return name;}
 }

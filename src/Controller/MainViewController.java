@@ -3,6 +3,7 @@ package Controller;
 import Model.DataModel;
 import Model.Medication;
 import Model.Patient;
+import Model.WeekPlanMedication;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -143,9 +144,25 @@ public class MainViewController {
 
     @FXML
     public void handlePrescribeButton(ActionEvent actionEvent) {
-        Patient tempPatient = new Patient();
+        String tempPatient;
+        String tempMedication;
+
         ArrayList<String> weekdays = new ArrayList<>();
 
+        checkWeekdays(weekdays);
+
+        tempPatient = patientView.getSelectionModel().getSelectedItem().getName();
+        tempMedication = medicationList.getSelectionModel().getSelectedItem().getName();
+
+        WeekPlanMedication weekPlanMedication = new WeekPlanMedication(tempPatient);
+
+        weekPlanMedication.addPrescribedDays(weekdays, tempMedication);
+
+        System.out.println(weekPlanMedication.toString());
+        model.addPrescribtion(weekPlanMedication);
+    }
+
+    private void checkWeekdays(ArrayList<String> weekdays) {
         if (monday.isSelected())
             weekdays.add("Monday");
         if (tuesday.isSelected())
@@ -160,9 +177,6 @@ public class MainViewController {
             weekdays.add("Saturday");
         if (sunday.isSelected())
             weekdays.add("Sunday");
-
-        tempPatient=patientView.getSelectionModel().getSelectedItem();
-        tempPatient.addPrescribedDays(weekdays);
     }
 
     public void handleImportButton() {

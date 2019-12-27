@@ -23,9 +23,8 @@ public class Person {
 		this.age = age;
 	}
 
-	public Person(String name, String surname) {
+	public Person(String name) {
 		this.name = name;
-		this.surname = surname;
 	}
 
 	public Person() {
@@ -36,4 +35,7 @@ public class Person {
 		return "Name: " + name + ", Surname: " + surname + ", Age: " + age;
 	}
 
+	public String getName() {
+		return name +", "+ surname;
+	}
 }

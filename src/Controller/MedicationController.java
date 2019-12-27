@@ -42,7 +42,6 @@ public class MedicationController {
 
     @FXML
     private void handleCancel() {
-        /* Close the window */
         Stage stage = (Stage) cancelButton.getScene().getWindow();
         stage.close();
     }

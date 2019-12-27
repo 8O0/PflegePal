@@ -11,6 +11,8 @@ public class Patient extends Person {
     };
 
     ArrayList<String> weekdays = new ArrayList<>();
+
+    private String medication;
     private String illness;
 
     public Patient(String surname, String name, int age, String illness) {
@@ -18,20 +20,26 @@ public class Patient extends Person {
         this.illness = illness;
     }
 
-    public Patient() {
-        super();
+    public Patient(String name) {
+        super(name);
     }
 
     public String toString() {
         return super.toString() + " Illness: " + illness;
     }
-
-    public String toStringPrescribe() {
-        return super.toString() + ", Weekdays: " + weekdays;
+/*
+    public String toStringWeekPlan() {
+        return "Name: " + getName() + ", Days: " + weekdays.toString() +
+                ", Medication: " + medication;
     }
 
-    public void addPrescribedDays(ArrayList<String> prescribedWeekdays) {
+    public String getName() {
+        return getName();
+    }
+
+    public void addPrescribedDays(ArrayList<String> prescribedWeekdays, String prescribedMedication) {
         weekdays.addAll(prescribedWeekdays);
-
+        medication = prescribedMedication;
     }
+    */
 }
