@@ -26,40 +26,10 @@ public class MainViewController {
 
 
     @FXML
-    public Button medicationbutton;
+    public Button medicationbutton, weeklyplanbutton, importbutton, exportbutton, prescribeButton;
 
     @FXML
-    public Button weeklyplanbutton;
-
-    @FXML
-    public Button importbutton;
-
-    @FXML
-    public Button exportbutton;
-
-    @FXML
-    public Button prescribeButton;
-
-    @FXML
-    public CheckBox monday;
-
-    @FXML
-    public CheckBox tuesday;
-
-    @FXML
-    public CheckBox wednesday;
-
-    @FXML
-    public CheckBox thursday;
-
-    @FXML
-    public CheckBox friday;
-
-    @FXML
-    public CheckBox saturday;
-
-    @FXML
-    public CheckBox sunday;
+    public CheckBox monday, tuesday, wednesday, thursday, friday, saturday, sunday;
 
     @FXML
     public ListView<Patient> patientView;
