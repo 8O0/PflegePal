@@ -4,7 +4,6 @@ import Model.DataModel;
 import Model.Medication;
 import Model.Patient;
 import Model.WeekPlanMedication;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -87,7 +86,7 @@ public class MainViewController {
     }
 
     @FXML
-    public void handleAddPatientButton(ActionEvent actionEvent) {
+    public void handleAddPatientButton() {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../View/AddPatientView.fxml"));
         Parent root;
         Stage stage;
@@ -106,18 +105,21 @@ public class MainViewController {
     }
 
     @FXML
-    public void handlePrescribeButton(ActionEvent actionEvent) {
+    public void handlePrescribeButton() {
         String tempPatient;
         String tempMedication;
+        String[] names;
+        WeekPlanMedication weekPlanMedication;
 
         ArrayList<String> weekdays = new ArrayList<>();
-
         checkWeekdays(weekdays);
 
         tempPatient = patientView.getSelectionModel().getSelectedItem().getName();
         tempMedication = medicationList.getSelectionModel().getSelectedItem().getName();
 
-        WeekPlanMedication weekPlanMedication = new WeekPlanMedication(tempPatient);
+        names = tempPatient.split(" ");
+
+        weekPlanMedication = new WeekPlanMedication(names[0], names[1]);
         weekPlanMedication.addPrescribedDays(weekdays, tempMedication);
 
         model.addPrescribtion(weekPlanMedication);
@@ -143,6 +145,7 @@ public class MainViewController {
             e.printStackTrace();
         }
 
+        assert inputStream != null;
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
 
         List<Patient> inputList = bufferedReader.lines()
@@ -151,8 +154,8 @@ public class MainViewController {
 
         System.out.println(inputList);
 
-        for (int i = 0; i < inputList.size(); i++) {
-            model.addPatient(inputList.get(i));
+        for (Patient patient : inputList) {
+            model.addPatient(patient);
         }
     }
 
