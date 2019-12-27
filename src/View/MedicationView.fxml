@@ -1,18 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ListView?>
-<?import javafx.scene.control.TextArea?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
-
-<BorderPane minHeight="480.0" minWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.MedicationController">
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<BorderPane minHeight="480.0" minWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.MedicationController">
     <center>
         <BorderPane prefHeight="200.0" prefWidth="547.0" BorderPane.alignment="CENTER">
             <center>
@@ -22,26 +15,26 @@
                             <children>
                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Name">
                                     <font>
-                                        <Font size="20.0" />
+                                        <Font size="20.0"/>
                                     </font>
                                     <VBox.margin>
-                                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
                                     </VBox.margin>
                                 </Text>
                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Amount">
                                     <font>
-                                        <Font size="20.0" />
+                                        <Font size="20.0"/>
                                     </font>
                                     <VBox.margin>
-                                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
                                     </VBox.margin>
                                 </Text>
                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Description">
                                     <font>
-                                        <Font size="20.0" />
+                                        <Font size="20.0"/>
                                     </font>
                                     <VBox.margin>
-                                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
                                     </VBox.margin>
                                 </Text>
                             </children>
@@ -50,17 +43,17 @@
                             <children>
                                 <TextField fx:id="medicationName">
                                     <VBox.margin>
-                                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
                                     </VBox.margin>
                                 </TextField>
                                 <TextField fx:id="amount" prefHeight="26.0" prefWidth="228.0">
                                     <VBox.margin>
-                                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
                                     </VBox.margin>
                                 </TextField>
-                                <TextArea prefHeight="200.0" prefWidth="200.0">
+                                <TextArea fx:id="medicationComment" prefHeight="200.0" prefWidth="200.0">
                                     <VBox.margin>
-                                        <Insets bottom="10.0" left="5.0" right="5.0" top="5.0" />
+                                        <Insets bottom="10.0" left="5.0" right="5.0" top="5.0"/>
                                     </VBox.margin>
                                 </TextArea>
                             </children>
@@ -69,7 +62,7 @@
                             <children>
                                 <ListView fx:id="medicationList" prefHeight="253.0" prefWidth="232.0">
                                     <VBox.margin>
-                                        <Insets bottom="10.0" left="10.0" right="10.0" top="5.0" />
+                                        <Insets bottom="10.0" left="10.0" right="10.0" top="5.0"/>
                                     </VBox.margin>
                                 </ListView>
                             </children>
@@ -80,23 +73,25 @@
             <bottom>
                 <HBox prefHeight="39.0" prefWidth="851.0" BorderPane.alignment="CENTER">
                     <children>
-                        <Pane prefHeight="39.0" prefWidth="744.0" />
+                        <Pane prefHeight="39.0" prefWidth="744.0"/>
                         <HBox prefHeight="35.0" prefWidth="175.0">
                             <children>
-                                <Button fx:id="CancelButton" mnemonicParsing="false" onAction="#handleCancel" text="Cancel">
+                                <Button fx:id="cancelButton" mnemonicParsing="false" onAction="#handleCancel"
+                                        text="Close">
                                     <padding>
-                                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
                                     </padding>
                                     <HBox.margin>
-                                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
                                     </HBox.margin>
                                 </Button>
-                                <Button fx:id="SubmitButton" mnemonicParsing="false" onAction="#handleSubmit" text="Confirm">
+                                <Button fx:id="submitButton" mnemonicParsing="false" onAction="#handleSubmit"
+                                        text="Confirm">
                                     <padding>
-                                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
                                     </padding>
                                     <HBox.margin>
-                                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
                                     </HBox.margin>
                                 </Button>
                             </children>
@@ -107,14 +102,15 @@
             <top>
                 <HBox prefHeight="44.0" prefWidth="837.0" BorderPane.alignment="CENTER">
                     <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Enter New Medication" wrappingWidth="595.0615234375">
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Enter New Medication"
+                              wrappingWidth="595.0615234375">
                             <font>
-                                <Font size="31.0" />
+                                <Font size="31.0"/>
                             </font>
                         </Text>
                         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Medication List">
                             <font>
-                                <Font size="31.0" />
+                                <Font size="31.0"/>
                             </font>
                         </Text>
                     </children>
@@ -123,15 +119,15 @@
         </BorderPane>
     </center>
     <top>
-        <Pane prefHeight="85.0" prefWidth="947.0" style="-fx-background-color: grey;" BorderPane.alignment="CENTER" />
+        <Pane prefHeight="85.0" prefWidth="947.0" style="-fx-background-color: grey;" BorderPane.alignment="CENTER"/>
     </top>
     <left>
-        <Pane prefHeight="200.0" prefWidth="58.0" BorderPane.alignment="CENTER" />
+        <Pane prefHeight="200.0" prefWidth="58.0" BorderPane.alignment="CENTER"/>
     </left>
     <right>
-        <Pane prefHeight="333.0" prefWidth="52.0" BorderPane.alignment="CENTER" />
+        <Pane prefHeight="333.0" prefWidth="52.0" BorderPane.alignment="CENTER"/>
     </right>
     <bottom>
-        <Pane prefHeight="87.0" prefWidth="947.0" style="-fx-background-color: grey;" BorderPane.alignment="CENTER" />
+        <Pane prefHeight="87.0" prefWidth="947.0" style="-fx-background-color: grey;" BorderPane.alignment="CENTER"/>
     </bottom>
 </BorderPane>

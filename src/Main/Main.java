@@ -1,6 +1,5 @@
 package Main;
 
-import Controller.AddPatientController;
 import Controller.MainViewController;
 import Model.DataModel;
 import javafx.application.Application;
@@ -14,7 +13,6 @@ import java.io.IOException;
 //
 public class Main extends Application {
 
-    private Stage primaryStage;
     private BorderPane rootLayout;
 
     public static void main(String[] args) {
@@ -24,8 +22,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) {
 
-        this.primaryStage = primaryStage;
-        this.primaryStage.setTitle("CareGiver");
+        primaryStage.setTitle("CareGiver");
 
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(Main.class.getResource("../View/MainView.fxml"));

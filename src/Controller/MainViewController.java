@@ -3,7 +3,6 @@ package Controller;
 import Model.DataModel;
 import Model.Medication;
 import Model.Patient;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -19,13 +18,10 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 import java.io.*;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.function.Function;
-import java.util.logging.FileHandler;
 
-import static java.util.stream.Collectors.joining;
 import static java.util.stream.Collectors.toList;
 
 public class MainViewController {
@@ -129,44 +125,10 @@ public class MainViewController {
     public void handleExportButton() {
 
         FileChooser fs = new FileChooser();
-        fs.setTitle("Export to CSV File");
-        fs.getExtensionFilters().add(new FileChooser.ExtensionFilter("CSV", "*.csv"));
+        fs.setTitle("Save CSV File");
         File file = fs.showSaveDialog(new Stage());
 
 
-        System.out.println(model.getPatients());
-
-        List<Patient> pats = model.getPatients();
-
-        try {
-            FileWriter fileWriter = new FileWriter(file.getAbsoluteFile());
-
-            for (Patient p : pats
-                 ) {
-
-                fileWriter.append(p.getName());
-                fileWriter.append(",");
-                fileWriter.append(p.getSurname());
-                fileWriter.append(",");
-                fileWriter.append((char) p.getAge());
-                fileWriter.append(",");
-                fileWriter.append(p.getGender());
-                fileWriter.append(",");
-                fileWriter.append(p.getAddress());
-                fileWriter.append(",");
-                fileWriter.append(p.getIllness());
-                fileWriter.append(System.lineSeparator());
-                
-            }
-            fileWriter.flush();
-            fileWriter.close();
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-
-        System.out.println(pats);
 
     }
 
