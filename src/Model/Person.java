@@ -27,9 +27,6 @@ public class Person {
 		this.name = name;
 	}
 
-	public Person() {
-	}
-
 	@Override
 	public String toString() {
 		return "Name: " + name + ", Surname: " + surname + ", Age: " + age;
