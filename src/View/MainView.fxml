@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.ListView?>
@@ -15,38 +16,59 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane minHeight="600.0" minWidth="800.0" prefHeight="600.0" prefWidth="912.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.MainViewController">
+<BorderPane minHeight="600.0" minWidth="800.0" prefHeight="707.0" prefWidth="1076.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.MainViewController">
     <bottom>
         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0" style="-fx-background-color: grey;" BorderPane.alignment="CENTER">
             <children>
                 <VBox prefHeight="100.0" prefWidth="287.0">
                     <children>
-                        <Button fx:id="medicationbutton" mnemonicParsing="false" onAction="#handleMedicationButton" prefHeight="26.0" prefWidth="213.0" text="Medication">
+                        <Button fx:id="medicationbutton" mnemonicParsing="false" onAction="#handleMedicationButton" prefHeight="30.0" prefWidth="298.0" text="Medication">
                             <VBox.margin>
-                                <Insets left="5.0" top="20.0" />
+                                <Insets bottom="10.0" left="5.0" right="5.0" top="20.0" />
                             </VBox.margin>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
                         </Button>
                         <HBox prefHeight="61.0" prefWidth="296.0">
                             <children>
-                                <Button fx:id="importbutton" mnemonicParsing="false" onAction="#handleImportButton" prefHeight="26.0" prefWidth="109.0" text="Import">
+                                <Button fx:id="importbutton" mnemonicParsing="false" onAction="#handleImportButton" prefHeight="30.0" prefWidth="150.0" text="Import">
                                     <HBox.margin>
-                                        <Insets left="5.0" right="5.0" top="10.0" />
+                                        <Insets left="5.0" right="5.0" />
                                     </HBox.margin>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <font>
+                              <Font size="14.0" />
+                           </font>
                                 </Button>
-                                <Button fx:id="exportbutton" mnemonicParsing="false" prefHeight="26.0" prefWidth="95.0" text="Export">
+                                <Button fx:id="exportbutton" mnemonicParsing="false" prefHeight="30.0" prefWidth="140.0" text="Export">
                                     <HBox.margin>
-                                        <Insets left="5.0" right="5.0" top="10.0" />
+                                        <Insets left="5.0" right="5.0" />
                                     </HBox.margin>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <font>
+                              <Font size="14.0" />
+                           </font>
                                 </Button>
                             </children>
                         </HBox>
                     </children>
                 </VBox>
-                <Pane prefHeight="100.0" prefWidth="186.0" />
+                <Pane prefHeight="100.0" prefWidth="351.0" />
                 <Button fx:id="addpatientbutton" mnemonicParsing="false" onAction="#handleAddPatientButton" prefHeight="66.0" prefWidth="175.0" text="Add Patient">
                     <font>
                         <Font size="18.0" />
                     </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
                 </Button>
                 <Button fx:id="weeklyplanbutton" mnemonicParsing="false" onAction="#handleWeekPlanButton" prefHeight="66.0" prefWidth="175.0" text="Weekly Plan">
                     <font>
@@ -55,6 +77,9 @@
                     <HBox.margin>
                         <Insets right="20.0" />
                     </HBox.margin>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
                 </Button>
             </children>
             <padding>
@@ -65,7 +90,6 @@
     <top>
         <VBox prefHeight="107.0" prefWidth="800.0" BorderPane.alignment="CENTER">
             <children>
-                <Pane prefHeight="74.0" prefWidth="800.0" style="-fx-background-color: grey;" />
                 <MenuBar fx:id="menuBar">
                     <menus>
                         <Menu mnemonicParsing="false" text="File">
@@ -85,6 +109,7 @@
                         </Menu>
                     </menus>
                 </MenuBar>
+                <Pane prefHeight="74.0" prefWidth="800.0" style="-fx-background-color: grey;" />
             </children>
         </VBox>
     </top>
@@ -97,7 +122,7 @@
     <center>
         <HBox prefHeight="393.0" prefWidth="934.0" BorderPane.alignment="CENTER">
             <children>
-                <VBox prefHeight="393.0" prefWidth="342.0">
+                <VBox prefHeight="500.0" prefWidth="453.0">
                     <children>
                         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Caregiver" wrappingWidth="184.572265625">
                             <font>
@@ -121,6 +146,9 @@
                                     <HBox.margin>
                                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                     </HBox.margin>
+                           <cursor>
+                              <Cursor fx:constant="TEXT" />
+                           </cursor>
                                 </TextField>
                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Name">
                                     <HBox.margin>
@@ -134,14 +162,17 @@
                                     <HBox.margin>
                                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                     </HBox.margin>
+                           <cursor>
+                              <Cursor fx:constant="TEXT" />
+                           </cursor>
                                 </TextField>
                             </children>
                         </HBox>
-                        <VBox prefHeight="286.0" prefWidth="242.0">
+                        <VBox prefHeight="397.0" prefWidth="425.0">
                             <children>
                                 <HBox prefHeight="45.0" prefWidth="342.0">
                                     <children>
-                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="MedStorage" wrappingWidth="201.66015625">
+                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="MedStorage" wrappingWidth="256.66015625">
                                             <font>
                                                 <Font size="26.0" />
                                             </font>
@@ -153,57 +184,105 @@
                                         </Text>
                                     </children>
                                 </HBox>
-                                <HBox prefHeight="273.0" prefWidth="342.0">
+                                <HBox prefHeight="333.0" prefWidth="425.0">
                                     <children>
                                         <ListView fx:id="medicationList" editable="true" prefHeight="237.0" prefWidth="274.0">
                                             <HBox.margin>
                                                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                             </HBox.margin>
+                                 <cursor>
+                                    <Cursor fx:constant="TEXT" />
+                                 </cursor>
                                         </ListView>
-                                        <VBox prefHeight="271.0" prefWidth="216.0">
+                                        <VBox prefHeight="258.0" prefWidth="195.0">
                                             <children>
                                                 <CheckBox fx:id="monday" mnemonicParsing="false" text="Monday">
-                                                    <VBox.margin>
-                                                        <Insets top="20.0" />
-                                                    </VBox.margin>
-                                                </CheckBox>
-                                                <CheckBox fx:id="tuesday" mnemonicParsing="false" text="Tuesday">
-                                                    <VBox.margin>
-                                                        <Insets top="10.0" />
-                                                    </VBox.margin>
-                                                </CheckBox>
-                                                <CheckBox fx:id="wednesday" mnemonicParsing="false" text="Wednesday">
-                                                    <VBox.margin>
-                                                        <Insets top="10.0" />
-                                                    </VBox.margin>
-                                                </CheckBox>
-                                                <CheckBox fx:id="thursday" mnemonicParsing="false" text="Thursday">
-                                                    <VBox.margin>
-                                                        <Insets top="10.0" />
-                                                    </VBox.margin>
-                                                </CheckBox>
-                                                <CheckBox fx:id="friday" mnemonicParsing="false" text="Friday">
-                                                    <VBox.margin>
-                                                        <Insets top="10.0" />
-                                                    </VBox.margin>
-                                                </CheckBox>
-                                                <CheckBox fx:id="saturday" mnemonicParsing="false" text="Saturday">
-                                                    <VBox.margin>
-                                                        <Insets top="10.0" />
-                                                    </VBox.margin>
-                                                </CheckBox>
-                                                <CheckBox fx:id="sunday" mnemonicParsing="false" text="Sunday">
-                                                    <VBox.margin>
-                                                        <Insets top="10.0" />
-                                                    </VBox.margin>
-                                                </CheckBox>
-                                                <Button fx:id="prescribeButton" mnemonicParsing="false" onAction="#handlePrescribeButton" text="Prescribe">
                                                     <VBox.margin>
                                                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                                                     </VBox.margin>
                                        <font>
-                                          <Font name="System Bold" size="18.0" />
+                                          <Font size="14.0" />
                                        </font>
+                                       <cursor>
+                                          <Cursor fx:constant="OPEN_HAND" />
+                                       </cursor>
+                                                </CheckBox>
+                                                <CheckBox fx:id="tuesday" mnemonicParsing="false" text="Tuesday">
+                                                    <VBox.margin>
+                                                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                    </VBox.margin>
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                       <cursor>
+                                          <Cursor fx:constant="OPEN_HAND" />
+                                       </cursor>
+                                                </CheckBox>
+                                                <CheckBox fx:id="wednesday" mnemonicParsing="false" text="Wednesday">
+                                                    <VBox.margin>
+                                                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                    </VBox.margin>
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                       <cursor>
+                                          <Cursor fx:constant="OPEN_HAND" />
+                                       </cursor>
+                                                </CheckBox>
+                                                <CheckBox fx:id="thursday" mnemonicParsing="false" text="Thursday">
+                                                    <VBox.margin>
+                                                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                    </VBox.margin>
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                       <cursor>
+                                          <Cursor fx:constant="OPEN_HAND" />
+                                       </cursor>
+                                                </CheckBox>
+                                                <CheckBox fx:id="friday" mnemonicParsing="false" text="Friday">
+                                                    <VBox.margin>
+                                                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                    </VBox.margin>
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                       <cursor>
+                                          <Cursor fx:constant="OPEN_HAND" />
+                                       </cursor>
+                                                </CheckBox>
+                                                <CheckBox fx:id="saturday" mnemonicParsing="false" text="Saturday">
+                                                    <VBox.margin>
+                                                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                    </VBox.margin>
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                       <cursor>
+                                          <Cursor fx:constant="OPEN_HAND" />
+                                       </cursor>
+                                                </CheckBox>
+                                                <CheckBox fx:id="sunday" mnemonicParsing="false" text="Sunday">
+                                                    <VBox.margin>
+                                                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                    </VBox.margin>
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                       <cursor>
+                                          <Cursor fx:constant="OPEN_HAND" />
+                                       </cursor>
+                                                </CheckBox>
+                                                <Button fx:id="prescribeButton" mnemonicParsing="false" onAction="#handlePrescribeButton" prefHeight="39.0" prefWidth="148.0" style="-fx-border-color: Green; -fx-border-radius: 12;" text="Prescribe" textAlignment="JUSTIFY">
+                                                    <VBox.margin>
+                                                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                    </VBox.margin>
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
                                                 </Button>
                                             </children>
                                         </VBox>
@@ -214,7 +293,7 @@
                     </children>
                 </VBox>
                 <Pane prefHeight="393.0" prefWidth="29.0" />
-                <VBox prefHeight="393.0" prefWidth="461.0">
+                <VBox prefHeight="500.0" prefWidth="590.0">
                     <children>
                         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Patients">
                             <font>
@@ -224,10 +303,13 @@
                                 <Insets left="5.0" right="5.0" />
                             </VBox.margin>
                         </Text>
-                        <ListView fx:id="patientView" editable="true" prefHeight="357.0" prefWidth="562.0">
+                        <ListView fx:id="patientView" editable="true" prefHeight="451.0" prefWidth="558.0">
                             <VBox.margin>
                                 <Insets bottom="5.0" left="5.0" right="5.0" />
                             </VBox.margin>
+                     <cursor>
+                        <Cursor fx:constant="TEXT" />
+                     </cursor>
                         </ListView>
                     </children>
                 </VBox>

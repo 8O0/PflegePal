@@ -38,28 +38,14 @@ public class AddPatientController {
 
     @FXML
     private void handleSubmit() {
-       //String gender = isGender(maleRadioButton.isArmed(), femaleRadioButton.isArmed());
-        Patient patient = new Patient(firstname.getText(), lastname.getText(), Integer.valueOf(age.getText()).intValue(), (isGender(maleRadioButton.isSelected(), femaleRadioButton.isSelected())), address.getText(), illness.getText());
+        Patient patient = new Patient(firstname.getText(), lastname.getText(), Integer.valueOf(age.getText()), (isGender(maleRadioButton.isSelected(), femaleRadioButton.isSelected())), address.getText(), illness.getText());
         model.addPatient(patient);
         Stage stage = (Stage) submitButton.getScene().getWindow();
         stage.close();
     }
 
-    private String isGender(boolean isMale, boolean isFemale){
-        if (isMale==TRUE)
-            return "Male";
-        else if(isFemale==TRUE)
-            return "Female";
-        else return "Not disclosed";
-        }
+    private String isGender(boolean isMale, boolean isFemale) {
+        return (isMale == TRUE) ? "Male" : (isFemale == TRUE) ? "Female" : "Not disclosed";
     }
-    /*
-    @FXML
-    private void handleSubmit() {
-        Patient patient = new Patient(firstname.getText(), lastname.getText(),Integer.valueOf(age.getText()).intValue(), illness.getText());
-        model.addPatient(patient);
-        Stage stage = (Stage) submitButton.getScene().getWindow();
-        stage.close();
-    }
-    }
-*/
+}
+
