@@ -8,13 +8,15 @@ import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
+import static java.lang.Boolean.TRUE;
+
 public class AddPatientController {
 
     @FXML
-    public Button submitButton,cancelButton;
+    public Button submitButton, cancelButton;
 
     @FXML
-    public TextField firstname,lastname,age,illness, address;
+    public TextField firstname, lastname, age, illness, address;
 
     @FXML
     public RadioButton maleRadioButton, femaleRadioButton;
@@ -36,12 +38,21 @@ public class AddPatientController {
 
     @FXML
     private void handleSubmit() {
-        Patient patient = new Patient(firstname.getText(), lastname.getText(),Integer.valueOf(age.getText()).intValue(), illness.getText(), address.getText(), (maleRadioButton.isArmed()) ? "M" :  "F");
+       //String gender = isGender(maleRadioButton.isArmed(), femaleRadioButton.isArmed());
+        Patient patient = new Patient(firstname.getText(), lastname.getText(), Integer.valueOf(age.getText()).intValue(), (isGender(maleRadioButton.isSelected(), femaleRadioButton.isSelected())), address.getText(), illness.getText());
         model.addPatient(patient);
         Stage stage = (Stage) submitButton.getScene().getWindow();
         stage.close();
     }
 
+    private String isGender(boolean isMale, boolean isFemale){
+        if (isMale==TRUE)
+            return "Male";
+        else if(isFemale==TRUE)
+            return "Female";
+        else return "Not disclosed";
+        }
+    }
     /*
     @FXML
     private void handleSubmit() {
@@ -50,5 +61,5 @@ public class AddPatientController {
         Stage stage = (Stage) submitButton.getScene().getWindow();
         stage.close();
     }
+    }
 */
-}
