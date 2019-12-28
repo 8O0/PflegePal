@@ -38,7 +38,7 @@ public class AddPatientController {
 
     @FXML
     private void handleSubmit() {
-        Patient patient = new Patient(firstname.getText(), lastname.getText(), Integer.valueOf(age.getText()), (isGender(maleRadioButton.isSelected(), femaleRadioButton.isSelected())), address.getText(), illness.getText());
+        Patient patient = new Patient(firstname.getText(), lastname.getText(), Integer.parseInt(age.getText()), (isGender(maleRadioButton.isSelected(), femaleRadioButton.isSelected())), address.getText(), illness.getText());
         model.addPatient(patient);
         Stage stage = (Stage) submitButton.getScene().getWindow();
         stage.close();
