@@ -162,8 +162,43 @@ public class MainViewController {
     public void handleExportButton() {
 
         FileChooser fs = new FileChooser();
-        fs.setTitle("Save CSV File");
+        fs.setTitle("Export to CSV File");
+        fs.getExtensionFilters().add(new FileChooser.ExtensionFilter("CSV", "*.csv"));
         File file = fs.showSaveDialog(new Stage());
+        
+        System.out.println(model.getPatients());
+
+        List<Patient> pats = model.getPatients();
+
+        try {
+            FileWriter fileWriter = new FileWriter(file.getAbsoluteFile());
+
+            for (Patient p : pats
+                 ) {
+
+                fileWriter.append(p.getName());
+                fileWriter.append(",");
+                fileWriter.append(p.getSurname());
+                fileWriter.append(",");
+                fileWriter.append((char) p.getAge());
+                fileWriter.append(",");
+                fileWriter.append(p.getGender());
+                fileWriter.append(",");
+                fileWriter.append(p.getAddress());
+                fileWriter.append(",");
+                fileWriter.append(p.getIllness());
+                fileWriter.append(System.lineSeparator());
+                
+            }
+            fileWriter.flush();
+            fileWriter.close();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
+        System.out.println(pats);
     }
 
     private void checkWeekdays(ArrayList<String> weekdays) {

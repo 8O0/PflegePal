@@ -28,6 +28,22 @@ public class Person {
         this.gender = gender;
     }
 
+    public String getAddress() {
+        return address;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
     @Override
     public String toString() {
         return "Name: " + name + ", Surname: " + surname + ", Age: " + age + ", Gender: " + gender + ", Address: " + address;
@@ -36,4 +52,6 @@ public class Person {
     public String getName() {
         return name + " " + surname;
     }
+
+
 }
