@@ -125,6 +125,7 @@ public class MainViewController {
         model.addPrescribtion(weekPlanMedication);
     }
 
+    @FXML
     public void handleImportButton() {
 
         FileChooser fs = new FileChooser();
@@ -159,6 +160,7 @@ public class MainViewController {
         }
     }
 
+    @FXML
     public void handleExportButton() {
 
         FileChooser fs = new FileChooser();
