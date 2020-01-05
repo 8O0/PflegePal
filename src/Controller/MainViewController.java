@@ -14,6 +14,7 @@ import javafx.scene.control.ListView;
 import javafx.stage.FileChooser;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -122,6 +123,7 @@ public class MainViewController {
         weekPlanMedication = new WeekPlanMedication(names[0], names[1]);
         weekPlanMedication.addPrescribedDays(weekdays, tempMedication);
 
+
         model.addPrescribtion(weekPlanMedication);
     }
 
@@ -167,30 +169,24 @@ public class MainViewController {
         fs.setTitle("Export to CSV File");
         fs.getExtensionFilters().add(new FileChooser.ExtensionFilter("CSV", "*.csv"));
         File file = fs.showSaveDialog(new Stage());
-        
+
         System.out.println(model.getPatients());
 
-        List<Patient> pats = model.getPatients();
+        //List<Patient> pats = model.getPatients();
+        List<WeekPlanMedication> weekPlanMedications = model.getPrescribtions();
+
 
         try {
             FileWriter fileWriter = new FileWriter(file.getAbsoluteFile());
 
-            for (Patient p : pats
-                 ) {
-
-                fileWriter.append(p.getName());
+            for (WeekPlanMedication weekPlanMedication : weekPlanMedications
+            ) {
+                fileWriter.append(weekPlanMedication.getName());
                 fileWriter.append(",");
-                fileWriter.append(p.getSurname());
+                fileWriter.append(weekPlanMedication.getMedication());
                 fileWriter.append(",");
-                fileWriter.append((char) p.getAge());
-                fileWriter.append(",");
-                fileWriter.append(p.getGender());
-                fileWriter.append(",");
-                fileWriter.append(p.getAddress());
-                fileWriter.append(",");
-                fileWriter.append(p.getIllness());
+                fileWriter.append(weekPlanMedication.getWeekdays());
                 fileWriter.append(System.lineSeparator());
-                
             }
             fileWriter.flush();
             fileWriter.close();
@@ -200,7 +196,7 @@ public class MainViewController {
         }
 
 
-        System.out.println(pats);
+        System.out.println(weekPlanMedications);
     }
 
     private void checkWeekdays(ArrayList<String> weekdays) {

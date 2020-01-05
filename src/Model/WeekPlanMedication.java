@@ -25,4 +25,12 @@ public class WeekPlanMedication extends Person {
         weekdays.addAll(prescribedWeekdays);
         medication = prescribedMedication;
     }
+
+    public String getWeekdays() {
+        return weekdays.toString();
+    }
+
+    public String getMedication() {
+        return medication;
+    }
 }

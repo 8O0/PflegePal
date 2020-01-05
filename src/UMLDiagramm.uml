@@ -3,54 +3,54 @@
   <ID>JAVA</ID>
   <OriginalElement>Controller</OriginalElement>
   <nodes>
-    <node x="650.4409007190353" y="64.98477314608192">Model.Patient</node>
-    <node x="475.60543238695396" y="0.0">Model.Person</node>
-    <node x="647.3021836452717" y="742.8821597869717">Controller.AddPatientController</node>
-    <node x="0.0" y="292.51545753710377">Controller.WeekPlanViewController</node>
-    <node x="830.6214629653391" y="573.3923069667728">Main.Main</node>
-    <node x="318.2601202000802" y="769.1864505707954">Controller.MainViewController</node>
-    <node x="18.2737109303701" y="506.94349590018487">Model.Medication</node>
-    <node x="85.68154792464793" y="689.1817878052358">Controller.MedicationController</node>
-    <node x="127.45922239906474" y="49.69551469532411">Model.WeekPlanMedication</node>
-    <node x="729.5927754870461" y="229.50558800526483">Model.DataModel</node>
+    <node x="663.6911806001449" y="69.65864616418071">Model.Patient</node>
+    <node x="490.38248913289726" y="0.0">Model.Person</node>
+    <node x="646.1038803987168" y="749.765190678768">Controller.AddPatientController</node>
+    <node x="0.0" y="292.9112709761097">Controller.WeekPlanViewController</node>
+    <node x="832.549962351726" y="582.6084390709207">Main.Main</node>
+    <node x="315.9847579945904" y="772.1988194218291">Controller.MainViewController</node>
+    <node x="84.51743857050502" y="690.021867854744">Controller.MedicationController</node>
+    <node x="17.955246805792854" y="507.3472269596525">Model.Medication</node>
+    <node x="133.70582042707537" y="23.623237187184543">Model.WeekPlanMedication</node>
+    <node x="737.5333137084644" y="238.69595628446666">Model.DataModel</node>
   </nodes>
   <notes />
   <edges>
     <edge source="Model.DataModel" target="Model.Patient">
-      <point x="0.0" y="-7.694969957191347" />
-      <point x="6.577852490556552" y="0.0" />
+      <point x="6.446743145943174" y="0.0" />
+      <point x="6.446743145943174" y="0.0" />
     </edge>
     <edge source="Model.DataModel" target="Model.WeekPlanMedication">
-      <point x="-1.621767731237071" y="4.729679632482316" />
-      <point x="-1.621767731237071" y="4.729679632482316" />
+      <point x="0.0" y="-5.319691889101819" />
+      <point x="0.0" y="-5.319691889101875" />
     </edge>
     <edge source="Controller.AddPatientController" target="Model.DataModel">
-      <point x="5.206832749655661" y="0.0" />
-      <point x="5.206832749655575" y="0.0" />
+      <point x="5.235703196795868" y="0.0" />
+      <point x="5.235703196795896" y="0.0" />
     </edge>
     <edge source="Model.Patient" target="Model.Person">
-      <point x="-1.5025899060277652" y="4.768880746496336" />
-      <point x="-1.502589906027751" y="4.768880746496336" />
+      <point x="-2.8421709430404007E-14" y="-5.2899161525891145" />
+      <point x="7.105427357601002E-15" y="-5.2899161525891145" />
     </edge>
     <edge source="Model.DataModel" target="Model.Medication">
-      <point x="0.0" y="-5.200421712143054" />
-      <point x="0.0" y="-5.200421712143083" />
+      <point x="1.3143146213257069" y="4.82416594616825" />
+      <point x="1.3143146213257069" y="4.824165946168264" />
     </edge>
     <edge source="Model.WeekPlanMedication" target="Model.Person">
-      <point x="0.0" y="5.132768844013981" />
-      <point x="0.0" y="5.132768844013981" />
-    </edge>
-    <edge source="Controller.AddPatientController" target="Model.Patient">
-      <point x="5.009945756622557" y="5.6843418860808015E-14" />
-      <point x="5.009945756622528" y="0.0" />
+      <point x="-1.0256108046513361" y="-4.893681893766939" />
+      <point x="-1.0256108046513361" y="-4.893681893766939" />
     </edge>
     <edge source="Controller.WeekPlanViewController" target="Model.DataModel">
-      <point x="-0.11824740886885365" y="-4.998601559465982" />
-      <point x="-0.11824740886885365" y="-4.998601559465982" />
+      <point x="0.0" y="5.000396107988678" />
+      <point x="0.0" y="5.000396107988678" />
+    </edge>
+    <edge source="Controller.AddPatientController" target="Model.Patient">
+      <point x="5.004545103402023" y="0.0" />
+      <point x="5.004545103402023" y="0.0" />
     </edge>
     <edge source="Controller.MedicationController" target="Model.DataModel">
-      <point x="9.83692379762391" y="0.0" />
-      <point x="0.0" y="5.805942837330974" />
+      <point x="10.077256921961919" y="0.0" />
+      <point x="0.0" y="5.758861018161809" />
     </edge>
     <edge source="Controller.WeekPlanViewController" target="Model.WeekPlanMedication">
       <point x="0.0" y="0.0" />
@@ -60,13 +60,13 @@
       <point x="0.0" y="0.0" />
       <point x="0.0" y="0.0" />
     </edge>
-    <edge source="Main.Main" target="Model.DataModel">
-      <point x="-4.999992229972065" y="0.008814772767209433" />
-      <point x="-4.999992229972065" y="0.008814772767209433" />
-    </edge>
     <edge source="Main.Main" target="Controller.MainViewController">
       <point x="0.0" y="0.0" />
       <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="Main.Main" target="Model.DataModel">
+      <point x="5.0008356160744825" y="0.0" />
+      <point x="5.000835616074539" y="0.0" />
     </edge>
     <edge source="Controller.MainViewController" target="Controller.AddPatientController">
       <point x="0.0" y="0.0" />
@@ -77,27 +77,27 @@
       <point x="0.0" y="0.0" />
     </edge>
     <edge source="Controller.MainViewController" target="Model.WeekPlanMedication">
-      <point x="5.108208982635077" y="0.0" />
-      <point x="5.108208982635148" y="0.0" />
+      <point x="-4.906133495728" y="0.9642894389631351" />
+      <point x="-4.906133495728" y="0.9642894389631351" />
     </edge>
     <edge source="Controller.MainViewController" target="Model.Patient">
-      <point x="5.279743132133021" y="5.6843418860808015E-14" />
-      <point x="5.279743132133007" y="0.0" />
+      <point x="5.3133012950827805" y="0.0" />
+      <point x="5.313301295082766" y="0.0" />
     </edge>
     <edge source="Controller.MainViewController" target="Model.DataModel">
-      <point x="6.393253102090661" y="0.0" />
-      <point x="6.393253102090739" y="0.0" />
+      <point x="6.477363462459529" y="0.0" />
+      <point x="6.4773634624594365" y="0.0" />
     </edge>
     <edge source="Controller.MedicationController" target="Model.Medication">
-      <point x="11.107014822106862" y="0.0" />
-      <point x="11.107014822106919" y="0.0" />
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
     </edge>
     <edge source="Controller.MainViewController" target="Controller.MedicationController">
       <point x="0.0" y="0.0" />
       <point x="0.0" y="0.0" />
     </edge>
   </edges>
-  <settings layout="Circular" zoom="0.9077526987242394" x="540.0" y="499.50000000000006" />
+  <settings layout="Circular" zoom="0.9050880626223092" x="544.0" y="501.0" />
   <SelectedNodes />
   <Categories>
     <Category>Methods</Category>
