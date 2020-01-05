@@ -3,10 +3,12 @@ package Controller;
 import Model.DataModel;
 import Model.Medication;
 import Model.Patient;
-import Model.WeekPlanMedication;
+import Model.PersonalMedication;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
+import javafx.scene.PerspectiveCamera;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
@@ -109,7 +111,7 @@ public class MainViewController {
         String tempPatient;
         String tempMedication;
         String[] names;
-        WeekPlanMedication weekPlanMedication;
+        PersonalMedication personalMedication;
 
         ArrayList<String> weekdays = new ArrayList<>();
         checkWeekdays(weekdays);
@@ -119,10 +121,10 @@ public class MainViewController {
 
         names = tempPatient.split(" ");
 
-        weekPlanMedication = new WeekPlanMedication(names[0], names[1]);
-        weekPlanMedication.addPrescribedDays(weekdays, tempMedication);
+        personalMedication = new PersonalMedication(names[0], names[1]);
+        personalMedication.addPrescribedDays(weekdays, tempMedication);
 
-        model.addPrescribtion(weekPlanMedication);
+        model.addPrescribtion(personalMedication);
     }
 
     @FXML
@@ -146,7 +148,7 @@ public class MainViewController {
             e.printStackTrace();
         }
 
-        assert inputStream != null;
+
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
 
         List<Patient> inputList = bufferedReader.lines()
@@ -168,29 +170,19 @@ public class MainViewController {
         fs.getExtensionFilters().add(new FileChooser.ExtensionFilter("CSV", "*.csv"));
         File file = fs.showSaveDialog(new Stage());
         
-        System.out.println(model.getPatients());
+        //System.out.println(model.getPatients());
 
         List<Patient> pats = model.getPatients();
+        List<PersonalMedication> meds = model.getPrescribtions();
+
+        System.out.println(meds);
 
         try {
             FileWriter fileWriter = new FileWriter(file.getAbsoluteFile());
 
-            for (Patient p : pats
-                 ) {
-
-                fileWriter.append(p.getName());
-                fileWriter.append(",");
-                fileWriter.append(p.getSurname());
-                fileWriter.append(",");
-                fileWriter.append((char) p.getAge());
-                fileWriter.append(",");
-                fileWriter.append(p.getGender());
-                fileWriter.append(",");
-                fileWriter.append(p.getAddress());
-                fileWriter.append(",");
-                fileWriter.append(p.getIllness());
+            for (int i = 0; i < meds.size(); i++) {
+                fileWriter.append(meds.get(i).toString());
                 fileWriter.append(System.lineSeparator());
-                
             }
             fileWriter.flush();
             fileWriter.close();
@@ -200,7 +192,7 @@ public class MainViewController {
         }
 
 
-        System.out.println(pats);
+       // System.out.println(pats);
     }
 
     private void checkWeekdays(ArrayList<String> weekdays) {
