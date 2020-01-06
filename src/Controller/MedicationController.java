@@ -25,6 +25,10 @@ public class MedicationController {
 
     private DataModel model;
 
+    /**
+     * Initiates Model in Medication Controller
+     * @param model
+     */
     public void initModel(DataModel model) {
         if (this.model != null) {
             throw new IllegalStateException("Model can only be initialized once");
@@ -34,12 +38,18 @@ public class MedicationController {
         System.out.println("Model init overview controller");
     }
 
+    /**
+     * Handles Cancel Button and closes Scene
+     */
     @FXML
     private void handleCancel() {
         Stage stage = (Stage) cancelButton.getScene().getWindow();
         stage.close();
     }
 
+    /**
+     * Handles Submission of Medication
+     */
     @FXML
     private void handleSubmit() {
         Medication medication = new Medication(medicationName.getText(), amount.getText(), medicationComment.getText());

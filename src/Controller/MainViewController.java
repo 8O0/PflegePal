@@ -49,6 +49,9 @@ public class MainViewController {
         System.out.println("Model init overview controller");
     }
 
+    /**
+     * Handles the Medicaiton ListView Observable
+     */
     @FXML
     public void handleMedicationButton() {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../View/MedicationView.fxml"));
@@ -68,6 +71,9 @@ public class MainViewController {
         }
     }
 
+    /**
+     * Handles the Weekly Buttong Submit Medication
+     */
     @FXML
     public void handleWeekPlanButton() {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../View/WeekPlanView.fxml"));
@@ -87,6 +93,9 @@ public class MainViewController {
         }
     }
 
+    /**
+     * Handles the add Patient BUtton
+     */
     @FXML
     public void handleAddPatientButton() {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../View/AddPatientView.fxml"));
@@ -106,6 +115,9 @@ public class MainViewController {
         }
     }
 
+    /**
+     * Handles the Prescription Button
+     */
     @FXML
     public void handlePrescribeButton() {
         String tempPatient;
@@ -127,6 +139,9 @@ public class MainViewController {
         model.addPrescribtion(personalMedication);
     }
 
+    /**
+     * Handles the Import CSV Patients Plan Button
+     */
     @FXML
     public void handleImportButton() {
 
@@ -162,6 +177,9 @@ public class MainViewController {
         }
     }
 
+    /**
+     * Handles the Weekly Plan Export button
+     */
     @FXML
     public void handleExportButton() {
 
@@ -194,6 +212,11 @@ public class MainViewController {
 
        // System.out.println(pats);
     }
+
+    /**
+     * ArrayList with the days of the week in it.
+     * @param weekdays
+     */
 
     private void checkWeekdays(ArrayList<String> weekdays) {
         if (monday.isSelected())

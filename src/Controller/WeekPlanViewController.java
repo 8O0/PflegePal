@@ -1,7 +1,7 @@
 package Controller;
 
 import Model.DataModel;
-import Model.WeekPlanMedication;
+import Model.PersonalMedication;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
@@ -17,10 +17,14 @@ public class WeekPlanViewController {
     public TextField name;
 
     @FXML
-    public ListView<WeekPlanMedication> prescriptionList;
+    public ListView<PersonalMedication> prescriptionList;
 
     private DataModel model;
 
+    /**
+     * Initiates model for WeekPlanViewController
+     * @param model
+     */
     public void initModel(DataModel model) {
         if (this.model != null) {
             throw new IllegalStateException("Model can only be initialized once");
@@ -30,6 +34,9 @@ public class WeekPlanViewController {
         System.out.println("Model init overview controller");
     }
 
+    /**
+     * Handles return button
+     */
     @FXML
     private void handleReturn() {
         Stage stage = (Stage) returnButton.getScene().getWindow();
