@@ -16,8 +16,8 @@ public class Patient extends Person {
 
     /**
      * Patient Constructor
-     * @param name
-     * @param surname
+     * @param name name
+     * @param surname surname
      */
     public Patient(String name, String surname) {
         super(name, surname);
@@ -25,12 +25,12 @@ public class Patient extends Person {
 
     /**
      * Patient Constructor
-     * @param surname
-     * @param name
-     * @param age
-     * @param gender
-     * @param address
-     * @param illness
+     * @param surname surname
+     * @param name name
+     * @param age age
+     * @param gender gender
+     * @param address address
+     * @param illness illness
      */
     public Patient(String surname, String name, int age, String gender, String address, String illness) {
         super(name, surname, age, address, gender);
@@ -39,7 +39,7 @@ public class Patient extends Person {
 
     /**
      * toString Method for Patients
-     * @return
+     * @return toString patients
      */
     public String toString() {
         return super.toString() + " Illness: " + illness;

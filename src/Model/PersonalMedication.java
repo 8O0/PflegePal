@@ -9,8 +9,8 @@ public class PersonalMedication extends Person {
 
     /**
      * Constructor for PersonalMedication
-     * @param name
-     * @param surname
+     * @param name name
+     * @param surname surname
      */
     public PersonalMedication(String name, String surname) {
         super(name, surname);
@@ -18,7 +18,7 @@ public class PersonalMedication extends Person {
 
     /**
      * toString method for Medications
-     * @return
+     * @return toString for Personal Medication
      */
     public String toString() {
         return "Name: " + getName() + ", Days: " + weekdays.toString() +
@@ -27,7 +27,7 @@ public class PersonalMedication extends Person {
 
     /**
      * get name from super class
-     * @return
+     * @return name
      */
     public String getName() {
         return super.getName();
@@ -35,8 +35,8 @@ public class PersonalMedication extends Person {
 
     /**
      * Add Prescription Days
-     * @param prescribedWeekdays
-     * @param prescribedMedication
+     * @param prescribedWeekdays Weekly Prescrption
+     * @param prescribedMedication Medicine Prescription
      */
     public void addPrescribedDays(ArrayList<String> prescribedWeekdays, String prescribedMedication) {
         weekdays.addAll(prescribedWeekdays);
@@ -45,7 +45,7 @@ public class PersonalMedication extends Person {
 
     /**
      * gets the day of the week.
-     * @return
+     * @return Selected days of the week.
      */
     public String getWeekdays() {
         return weekdays.toString();
@@ -53,7 +53,7 @@ public class PersonalMedication extends Person {
 
     /**
      * gets the Medication
-     * @return
+     * @return medication
      */
     public String getMedication() {
         return medication;

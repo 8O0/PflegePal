@@ -27,7 +27,7 @@ public class MedicationController {
 
     /**
      * Initiates Model in Medication Controller
-     * @param model
+     * @param model Model
      */
     public void initModel(DataModel model) {
         if (this.model != null) {

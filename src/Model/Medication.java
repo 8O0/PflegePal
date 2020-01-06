@@ -8,9 +8,9 @@ public class Medication {
 
     /**
      * Default Constructor
-     * @param name
-     * @param amount
-     * @param comment
+     * @param name Name
+     * @param amount Medication ammount
+     * @param comment Medication Info
      */
     public Medication(String name, String amount, String comment) {
         this.name = name;
@@ -20,12 +20,17 @@ public class Medication {
 
     /**
      * toString method for Medication
-     * @return
+     * @return String of Medicationy
+     * s
      */
     public String toString() {
         return "Name: " + name + ", Amount: " + amount + ", Additional Info: " + comment;
     }
 
+    /**
+     * Medication Name
+     * @return medication name
+     */
     public String getName() {
         return name;
     }

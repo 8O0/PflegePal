@@ -22,7 +22,7 @@ public class DataModel {
 
     /**
      * Add Patient to model
-     * @param patient
+     * @param patient added from the Patient Class
      */
     public void addPatient(Patient patient) {
         patients.add(patient);
@@ -31,7 +31,7 @@ public class DataModel {
 
     /**
      * Add Medication to model
-     * @param medication
+     * @param medication added from the medications list
      */
     public void addMedication(Medication medication) {
         medications.add(medication);
@@ -40,7 +40,7 @@ public class DataModel {
 
     /**
      * Add Prescription to model
-     * @param personalMedication
+     * @param personalMedication from the Personal Medicaiton list
      */
     public void addPrescribtion(PersonalMedication personalMedication) {
         prescribedMedications.add(personalMedication);
@@ -49,7 +49,7 @@ public class DataModel {
 
     /**
      * Observable Patients
-     * @return
+     * @return returns the list of Patients in the Obsercable List
      */
     public ObservableList<Patient> getPatients() {
         return this.patients;
@@ -57,7 +57,7 @@ public class DataModel {
 
     /**
      * Obsercable Medications
-     * @return
+     * @return Observable Lists with Medications
      */
     public ObservableList<Medication> getMedications() {
         return this.medications;
@@ -65,7 +65,7 @@ public class DataModel {
 
     /**
      * Observable Prescriptions
-     * @return
+     * @return Obsercvable List with Prescribed Info
      */
     public ObservableList<PersonalMedication> getPrescribtions() {
         return this.prescribedMedications;

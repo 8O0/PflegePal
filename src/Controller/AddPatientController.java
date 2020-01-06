@@ -25,7 +25,7 @@ public class AddPatientController {
 
     /**
      * Model Initialization
-     * @param model
+     * @param model our model
      */
     public void initModel(DataModel model) {
         if (this.model != null) {

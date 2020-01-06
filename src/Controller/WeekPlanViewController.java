@@ -23,7 +23,7 @@ public class WeekPlanViewController {
 
     /**
      * Initiates model for WeekPlanViewController
-     * @param model
+     * @param model Model
      */
     public void initModel(DataModel model) {
         if (this.model != null) {

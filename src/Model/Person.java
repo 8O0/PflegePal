@@ -10,8 +10,8 @@ public class Person {
 
     /**
      * Constructor for Person
-     * @param name
-     * @param surname
+     * @param name name
+     * @param surname surname
      */
     public Person(String name, String surname) {
         this.name = name;
@@ -20,11 +20,11 @@ public class Person {
 
     /**
      * Constructor for Person
-     * @param name
-     * @param surname
-     * @param age
-     * @param address
-     * @param gender
+     * @param name name
+     * @param surname surname
+     * @param age age
+     * @param address address
+     * @param gender gender
      */
     public Person(String name, String surname, int age, String address, String gender) {
         this.name = name;
@@ -35,8 +35,8 @@ public class Person {
     }
 
     /**
-     * toString for PErson
-     * @return
+     * toString for Person
+     * @return toString for Person
      */
     @Override
     public String toString() {
@@ -45,7 +45,7 @@ public class Person {
 
     /**
      * get Name
-     * @return
+     * @return name
      */
     public String getName() {
         return name + " " + surname;
