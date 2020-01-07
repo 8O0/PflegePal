@@ -9,9 +9,9 @@ public class Person {
     private int age;
 
     /**
-     * Constructor for Person
-     * @param name name
-     * @param surname surname
+     * Main Constructor for Person
+     * @param name The name of a Person
+     * @param surname The Surname of a Person
      */
     public Person(String name, String surname) {
         this.name = name;
@@ -19,12 +19,12 @@ public class Person {
     }
 
     /**
-     * Constructor for Person
-     * @param name name
-     * @param surname surname
-     * @param age age
-     * @param address address
-     * @param gender gender
+     * Second Constructor for Person
+     * @param name The Name of a Person
+     * @param surname The Surname of a Person
+     * @param age The Age of a Person
+     * @param address The Address of a Person
+     * @param gender The Gender of a Person
      */
     public Person(String name, String surname, int age, String address, String gender) {
         this.name = name;
@@ -45,7 +45,7 @@ public class Person {
 
     /**
      * get Name
-     * @return name
+     * @return The name of a person
      */
     public String getName() {
         return name + " " + surname;

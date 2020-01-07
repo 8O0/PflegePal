@@ -7,6 +7,7 @@ public class Patient extends Person {
 
     /**
      * Defined function mapToPatient for streams
+     * Functional Java
      */
     public static Function<String, Patient> mapToPatient = (line) -> {
         String[] p = line.split(", ");

@@ -27,7 +27,7 @@ public class PersonalMedication extends Person {
 
     /**
      * get name from super class
-     * @return name
+     * @return The name of the personal medication
      */
     public String getName() {
         return super.getName();
