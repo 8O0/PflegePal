@@ -1,5 +1,9 @@
 # BTX8052 Mini Project
 
-Mit dem MedSmartPal werden Akteure des Gesundheitswesen unterstützt. Die Applikation ist
-für Spitalapotheker, Ärzte sowie Pfleger gedacht. Mit dem MedSmartPal wird eine Übersicht
-geschaffen welche die Akteure bei der Einhaltung von verschriebenen Medikamenten kräftigt
+Guten Tag Frau Kurpicz
+
+Sie finden das PDF mit der Werbung sowie die Präsentation im Ordner src>resources [Link](https://gitlab.ti.bfh.ch/jimen1/btx8052-mini-project/tree/master/src/resources)
+
+Liebe Grüsse
+
+Lukas und Alex
